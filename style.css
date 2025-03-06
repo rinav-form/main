@@ -273,6 +273,7 @@ body {
 .menu-item {
     position: relative;
     width: 100%;
+    top: 100px;
 }
 
 .main-button {
