@@ -183,11 +183,28 @@ async function loadForm(formName, dept) {
         `;
         
         // Form verilerini localStorage'a kaydet
-        document.querySelector('form').addEventListener('input', (e) => {
-            const formData = new FormData(e.target.form);
-            const formObject = Object.fromEntries(formData);
-            localStorage.setItem(`${dept}_${formName}_data`, JSON.stringify(formObject));
-        });
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('input', (e) => {
+                const formData = new FormData(e.target.form);
+                const formObject = Object.fromEntries(formData);
+                localStorage.setItem(`${dept}_${formName}_data`, JSON.stringify(formObject));
+            });
+
+            // Önceki form verilerini yükle
+            const savedData = localStorage.getItem(`${dept}_${formName}_data`);
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                Object.entries(formData).forEach(([key, value]) => {
+                    const input = form.elements[key];
+                    if (input) {
+                        input.value = value;
+                    }
+                });
+                // Sayfa yüklendiğinde önizlemeyi otomatik göster
+                generatePreview(formName, dept);
+            }
+        }
         
     } catch (error) {
         console.error('Form yüklenirken hata:', error);
@@ -243,6 +260,11 @@ function initializeMenuInteractions() {
                 icon.classList.remove('fa-chevron-right');
                 icon.classList.add('fa-chevron-left');
             }
+
+            // Form ve önizleme container'larının yüksekliğini güncelle
+            setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+            }, 300);
         });
     }
 
