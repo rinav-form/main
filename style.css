@@ -489,4 +489,163 @@ body {
 
     .content-area {
         margin-left: 220px;
-        margin-top: 
+        margin-top: 110px;
+        height: calc(100vh - 130px);
+    }
+
+    .departments-container {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .dept-card {
+        width: calc(20% - 1rem);
+        min-width: 150px;
+    }
+
+    .card-info h3 {
+        font-size: 2rem;
+    }
+
+    .card-info p {
+        font-size: 1rem;
+    }
+
+    .dept-logo {
+        width: 80px;
+        height: 80px;
+        margin: 1rem 0;
+    }
+
+    .department-homepage {
+        grid-template-columns: 220px 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .department-header {
+        flex-direction: row;
+        height: 80px;
+        padding: 1rem;
+    }
+
+    .header-left {
+        width: auto;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .dept-logo-header {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dept-info h1 {
+        font-size: 1.6rem;
+    }
+
+    .dept-info p {
+        font-size: 0.9rem;
+    }
+
+    .menu-bar {
+        position: fixed;
+        left: -250px;
+        transition: left 0.3s ease;
+        z-index: 999;
+        background: rgba(15, 15, 15, 0.98);
+    }
+
+    .menu-bar.active {
+        left: 0;
+    }
+
+    .content-area {
+        margin-left: 0;
+        margin-top: 100px;
+        height: calc(100vh - 120px);
+        grid-template-columns: 1fr;
+    }
+
+    .department-homepage {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main";
+    }
+
+    .departments-container {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .dept-card {
+        min-width: 200px;
+        width: 200px;
+        height: 85vh;
+        flex-shrink: 0;
+    }
+
+    .card-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .card-info p {
+        font-size: 0.9rem;
+    }
+
+    .form-container,
+    .preview-container {
+        max-height: calc(100vh - 140px);
+    }
+}
+
+@media (max-width: 480px) {
+    .department-header {
+        padding: 0.8rem;
+    }
+
+    .dept-logo-header {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dept-info h1 {
+        font-size: 1.4rem;
+    }
+
+    .dept-info p {
+        font-size: 0.8rem;
+    }
+
+    .back-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .content-area {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .form-container,
+    .preview-container {
+        padding: 1rem;
+    }
+
+    .main-button {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .sub-menu a {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
