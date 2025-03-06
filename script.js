@@ -91,7 +91,6 @@ function loadDepartmentHomepage(dept) {
                     </div>
                     <div class="dept-info">
                         <h1>${dept.toUpperCase()}</h1>
-                        <p>${deptNames[dept]}</p>
                     </div>
                 </div>
 
