@@ -213,6 +213,7 @@ body {
     flex-direction: column;
     padding: 2rem;
     padding-top: 80px;
+    padding-bottom: 100px;
     overflow-y: auto;
 }
 
@@ -243,10 +244,23 @@ body {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
-.department-header h1 {
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.header-text h1 {
     font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1;
+}
+
+.header-text p {
+    font-size: 1rem;
+    opacity: 0.8;
+    font-weight: 400;
 }
 
 /* Menu Bar Styles */
@@ -255,6 +269,7 @@ body {
     gap: 0.8rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    margin-top: 90px;
 }
 
 .menu-item {
@@ -353,9 +368,8 @@ body {
 .form-page {
     display: flex;
     gap: 2rem;
-    height: calc(100vh - 180px);
-    overflow-y: auto;
-    padding-bottom: 2rem;
+    min-height: calc(100vh - 180px);
+    padding-bottom: 100px;
 }
 
 .report-form {
@@ -375,6 +389,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .preview-section textarea {
@@ -423,6 +438,30 @@ body {
     color: white;
 }
 
+/* Preview button */
+.preview-button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.preview-button:hover {
+    background: #1976D2;
+}
+
+.preview-button i {
+    font-size: 1.1rem;
+}
+
 /* Copy button */
 .copy-button {
     background: #4CAF50;
@@ -450,6 +489,7 @@ body {
     backdrop-filter: blur(10px);
     overflow-y: auto;
     margin-top: 1rem;
+    margin-bottom: 50px;
 }
 
 /* Responsive düzenlemeler */
@@ -530,6 +570,7 @@ body {
     .department-homepage {
         padding: 1rem;
         padding-top: 70px;
+        padding-bottom: 80px;
     }
 
     .menu-bar {
@@ -548,5 +589,14 @@ body {
     .form-page {
         flex-direction: column;
         height: auto;
+        padding-bottom: 80px;
+    }
+
+    .content-area {
+        margin-bottom: 30px;
+    }
+
+    .preview-section {
+        margin-bottom: 30px;
     }
 }
