@@ -292,6 +292,7 @@ body {
     left: 0;
     width: 250px;
     overflow-y: auto;
+    overflow-x: hidden;
     transition: width 0.3s ease;
     z-index: 1000;
 }
@@ -321,6 +322,7 @@ body {
 .menu-item {
     position: relative;
     width: 100%;
+    min-width: 0;
 }
 
 .main-button {
@@ -337,6 +339,7 @@ body {
     width: 100%;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 0;
 }
 
 .main-button .button-content {
@@ -345,16 +348,15 @@ body {
     gap: 1rem;
     min-width: 0;
     overflow: hidden;
+    flex: 1;
 }
 
 .main-button .button-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.main-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    flex: 1;
+    min-width: 0;
 }
 
 .sub-menu {
@@ -368,6 +370,7 @@ body {
     flex-direction: column;
     gap: 0;
     backdrop-filter: blur(10px);
+    min-width: 0;
 }
 
 .sub-menu.active {
@@ -384,6 +387,16 @@ body {
     gap: 0.8rem;
     transition: all 0.2s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-width: 0;
+    overflow: hidden;
+}
+
+.sub-menu a span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
 }
 
 .sub-menu a:hover {
