@@ -177,25 +177,30 @@ body {
     );
 }
 
+.dept-card:hover .card-bg {
+    filter: brightness(1.5); /* Hover'da daha parlak */
+    transform: scale(1.05);
+}
+
 /* Departman-spesifik hover efektleri */
 .lspd:hover .card-bg {
-    filter: brightness(1.2) transform: scale(1.05);
+    filter: brightness(1.5) transform: scale(1.05);
 }
 
 .lssd:hover .card-bg {
-    filter: brightness(1.2) transform: scale(1.05);
+    filter: brightness(1.5) transform: scale(1.05);
 }
 
 .lsfmd:hover .card-bg {
-    filter: brightness(1.2) transform: scale(1.05);
+    filter: brightness(1.5) transform: scale(1.05);
 }
 
 .fib:hover .card-bg {
-    filter: brightness(1.2) transform: scale(1.05);
+    filter: brightness(1.5) transform: scale(1.05);
 }
 
 .doj:hover .card-bg {
-    filter: brightness(1.2) transform: scale(1.05);
+    filter: brightness(1.5) transform: scale(1.05);
 }
 
 /* Logo ve metin hover efektleri */
