@@ -11,7 +11,6 @@ body {
     min-height: 100vh;
     background: #0f0f0f;
     color: white;
-    overflow: hidden;
 }
 
 .background {
@@ -257,33 +256,23 @@ body {
 }
 
 .menu-toggle {
-    position: fixed;
-    top: 110px;
-    right: -30px;
-    width: 30px;
-    height: 30px;
-    background: rgba(15, 15, 15, 0.95);
-    border: none;
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001;
-    border-radius: 0 4px 4px 0;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.menu-toggle:hover {
-    background: rgba(30, 30, 30, 0.95);
+    border: none;
+    color: white;
 }
 
 .menu-bar {
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    padding: 0;
+    gap: 0.5rem;
+    padding: 1rem;
     background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
     height: calc(100vh - 100px);
@@ -292,43 +281,16 @@ body {
     left: 0;
     width: 250px;
     overflow-y: auto;
-    overflow-x: hidden;
-    transition: width 0.3s ease;
-    z-index: 1000;
-}
-
-/* Scrollbar stilleri */
-.menu-bar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.menu-bar::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.menu-bar::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-}
-
-.menu-bar::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.menu-bar.collapsed {
-    width: 60px;
 }
 
 .menu-item {
     position: relative;
-    width: 100%;
-    min-width: 0;
 }
 
 .main-button {
     background: rgba(255, 255, 255, 0.1);
     padding: 1rem 1.5rem;
-    border-radius: 0;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -338,39 +300,26 @@ body {
     font-size: 1rem;
     width: 100%;
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    min-width: 0;
+    color: white;
 }
 
 .main-button .button-content {
     display: flex;
     align-items: center;
     gap: 1rem;
-    min-width: 0;
-    overflow: hidden;
-    flex: 1;
-}
-
-.main-button .button-text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex: 1;
-    min-width: 0;
 }
 
 .sub-menu {
     position: relative;
     width: 100%;
     background: rgba(20, 20, 20, 0.95);
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
     display: none;
     flex-direction: column;
-    gap: 0;
+    gap: 0.5rem;
     backdrop-filter: blur(10px);
-    min-width: 0;
 }
 
 .sub-menu.active {
@@ -380,42 +329,16 @@ body {
 .sub-menu a {
     color: white;
     text-decoration: none;
-    padding: 0.8rem 1.5rem 0.8rem 3rem;
-    border-radius: 0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     gap: 0.8rem;
     transition: all 0.2s ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    min-width: 0;
-    overflow: hidden;
-}
-
-.sub-menu a span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex: 1;
-    min-width: 0;
 }
 
 .sub-menu a:hover {
     background: rgba(255, 255, 255, 0.1);
-}
-
-.menu-bar.collapsed .button-text,
-.menu-bar.collapsed .button-arrow,
-.menu-bar.collapsed .sub-menu {
-    display: none;
-}
-
-.menu-bar.collapsed .main-button {
-    padding: 1rem;
-    justify-content: center;
-}
-
-.menu-bar.collapsed .main-button i {
-    margin: 0;
 }
 
 .content-area {
@@ -426,34 +349,18 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    height: calc(100vh - 140px);
-    transition: all 0.3s ease;
-    width: calc(100% - 250px);
-    position: fixed;
-    right: 0;
-}
-
-.content-area.expanded {
-    margin-left: 60px;
-    width: calc(100% - 60px);
 }
 
 .form-container {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 2rem;
-    overflow-y: auto;
-    height: 100%;
-    min-height: 0;
 }
 
 .preview-container {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 2rem;
-    overflow-y: auto;
-    height: 100%;
-    min-height: 0;
 }
 
 .back-button {
@@ -575,12 +482,6 @@ body {
 
     .content-area {
         margin-left: 220px;
-        width: calc(100% - 220px);
-    }
-
-    .content-area.expanded {
-        margin-left: 60px;
-        width: calc(100% - 60px);
     }
 
     .departments-container {
@@ -656,15 +557,8 @@ body {
 
     .content-area {
         margin-left: 0;
-        width: 100%;
-        position: relative;
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
-
-    .content-area.expanded {
-        margin-left: 0;
-        width: 100%;
     }
 
     .department-homepage {
@@ -694,16 +588,6 @@ body {
 
     .card-info p {
         font-size: 0.9rem;
-    }
-
-    .form-container,
-    .preview-container {
-        height: auto;
-        min-height: 300px;
-    }
-
-    .menu-toggle {
-        display: none;
     }
 }
 
