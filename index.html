@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Santos Departmanları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="gradient-bg"></div>
+    </div>
+
+    <div id="departmentModal" class="fullscreen-modal">
+        <div class="departments-container">
+            <div class="dept-card lspd" onclick="selectDepartment('lspd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lspd-logo.svg" alt="LSPD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSPD</h3>
+                        <p>Los Santos Polis Departmanı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dept-card lssd" onclick="selectDepartment('lssd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lssd-logo.svg" alt="LSSD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSSD</h3>
+                        <p>Los Santos Şerif Departmanı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dept-card lsfmd" onclick="selectDepartment('lsfmd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lsfmd-logo.svg" alt="LSFMD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSFMD</h3>
+                        <p>Los Santos İtfaiye Departmanı</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dept-card fib" onclick="selectDepartment('fib')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/fib-logo.svg" alt="FIB Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>FIB</h3>
+                        <p>Federal Soruşturma Bürosu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dept-card doj" onclick="selectDepartment('doj')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/doj-logo.svg" alt="DOJ Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>DOJ</h3>
+                        <p>Adalet Departmanı</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent" class="hidden">
+        <!-- Departman içeriği buraya gelecek -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
