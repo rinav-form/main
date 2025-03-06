@@ -210,7 +210,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 1.5rem;
     backdrop-filter: blur(5px);
     z-index: 1000;
     height: 100px;
