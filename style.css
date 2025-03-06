@@ -206,22 +206,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2.5rem;
     background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    height: 80px;
+    height: 100px;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .dept-logo-header {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dept-logo-header img {
@@ -234,115 +237,57 @@ body {
 .dept-info {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.3rem;
 }
 
 .dept-info h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin: 0;
 }
 
 .dept-info p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     opacity: 0.8;
     margin: 0;
 }
 
 .menu-bar {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 0;
-    margin-left: 2rem;
-}
-
-.menu-item {
-    position: relative;
+    margin-left: 3rem;
 }
 
 .main-button {
     background: rgba(255, 255, 255, 0.1);
-    padding: 0.7rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.main-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.main-button i {
-    font-size: 1.1rem;
-}
-
-.sub-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background: rgba(20, 20, 20, 0.95);
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    z-index: 100;
-}
-
-.sub-menu.active {
-    display: flex;
-}
-
-.sub-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    transition: all 0.2s ease;
-}
-
-.sub-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.sub-menu i {
-    font-size: 1.1rem;
-    width: 20px;
-    text-align: center;
+    font-size: 1rem;
 }
 
 .back-button {
     background: rgba(255, 255, 255, 0.1);
-    padding: 0.7rem 1.5rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 0.9rem;
-}
-
-.back-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    font-size: 1rem;
 }
 
 .content-area {
-    margin-top: 100px;
+    margin-top: 120px;
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -352,6 +297,85 @@ body {
     padding: 2rem;
     backdrop-filter: blur(10px);
     overflow: hidden;
+    height: calc(100vh - 140px);
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+.preview-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .department-header {
+        padding: 1.2rem 2rem;
+        height: 90px;
+    }
+
+    .dept-logo-header {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dept-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu-bar {
+        margin-left: 2rem;
+    }
+
+    .content-area {
+        margin-top: 110px;
+        height: calc(100vh - 130px);
+    }
+}
+
+@media (max-width: 768px) {
+    .department-header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 1.5rem;
+    }
+
+    .dept-logo-header {
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-bar {
+        margin: 1.5rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .back-button {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .content-area {
+        margin-top: 180px;
+        height: calc(100vh - 200px);
+        grid-template-columns: 1fr;
+    }
 }
 
 .form-container {
