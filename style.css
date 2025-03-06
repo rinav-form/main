@@ -165,32 +165,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Departman-spesifik hover efektleri */
-.lspd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.lssd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.lsfmd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.fib:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.doj:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
 /* Logo ve metin hover efektleri */
 .dept-card:hover .dept-logo {
     transform: scale(1.1);
@@ -231,33 +205,23 @@ body {
     right: 0;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
     padding: 1rem 2rem;
     background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
+    height: 80px;
 }
 
-.back-button {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
+.header-left {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.back-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    gap: 2rem;
 }
 
 .dept-logo-header {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 
 .dept-logo-header img {
@@ -267,17 +231,29 @@ body {
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
 }
 
-.department-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.dept-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
-/* Menu Bar Styles */
+.dept-info h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dept-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
 .menu-bar {
     display: flex;
     gap: 1rem;
-    margin-top: 120px;
+    margin: 0;
+    margin-left: 2rem;
 }
 
 .menu-item {
@@ -286,14 +262,15 @@ body {
 
 .main-button {
     background: rgba(255, 255, 255, 0.1);
-    padding: 1rem 2rem;
-    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.8rem;
     font-weight: 500;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
 
 .main-button:hover {
@@ -301,7 +278,7 @@ body {
 }
 
 .main-button i {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .sub-menu {
@@ -346,7 +323,26 @@ body {
     text-align: center;
 }
 
+.back-button {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .content-area {
+    margin-top: 100px;
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -468,6 +464,14 @@ body {
         height: 80px;
         margin: 1rem 0;
     }
+
+    .menu-bar {
+        margin-left: 1rem;
+    }
+
+    .main-button {
+        padding: 0.6rem 1rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -495,5 +499,28 @@ body {
 
     .content-area {
         grid-template-columns: 1fr;
+    }
+
+    .department-header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .menu-bar {
+        margin: 1rem 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .back-button {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
     }
 }
