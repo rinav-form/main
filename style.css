@@ -96,27 +96,27 @@ body {
 /* Departman arka plan resimleri */
 .lspd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lspd-bg.jpg');
+                      url('images/backgrounds/lspd-bg.png');
 }
 
 .lssd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lssd-bg.jpg');
+                      url('images/backgrounds/lssd-bg.png');
 }
 
 .lsfmd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lsfmd-bg.jpg');
+                      url('images/backgrounds/lsfmd-bg.png');
 }
 
 .fib .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/fib-bg.jpg');
+                      url('images/backgrounds/fib-bg.png');
 }
 
 .doj .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/doj-bg.jpg');
+                      url('images/backgrounds/doj-bg.png');
 }
 
 .dept-card:hover .card-bg {
