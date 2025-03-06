@@ -85,6 +85,7 @@ function loadDepartmentHomepage(dept) {
         <div class="department-homepage">
             <div class="department-header">
                 <div class="header-left">
+                    ${window.innerWidth <= 768 ? '<button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>' : ''}
                     <div class="dept-logo-header">
                         <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
                     </div>
@@ -93,44 +94,48 @@ function loadDepartmentHomepage(dept) {
                         <p>${deptNames[dept]}</p>
                     </div>
                 </div>
-                
-                <nav class="menu-bar">
-                    <div class="menu-item">
-                        <div class="main-button">
-                            <i class="fas fa-file-alt"></i>
-                            Formlar
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            ${departmentMenus[dept].forms.map(form => `
-                                <a href="#" data-form="${form.id}">
-                                    <i class="fas ${form.icon}"></i>${form.title}
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="menu-item">
-                        <div class="main-button">
-                            <i class="fas fa-database"></i>
-                            Veri Tabanı
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="sub-menu">
-                            ${departmentMenus[dept].database.map(item => `
-                                <a href="#" data-form="${item.id}">
-                                    <i class="fas ${item.icon}"></i>${item.title}
-                                </a>
-                            `).join('')}
-                        </div>
-                    </div>
-                </nav>
 
                 <a href="#" class="back-button" onclick="goBack()">
                     <i class="fas fa-arrow-left"></i>
                     Geri Dön
                 </a>
             </div>
+
+            <nav class="menu-bar">
+                <div class="menu-item">
+                    <div class="main-button">
+                        <div class="button-content">
+                            <i class="fas fa-file-alt"></i>
+                            Formlar
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="sub-menu">
+                        ${departmentMenus[dept].forms.map(form => `
+                            <a href="#" data-form="${form.id}">
+                                <i class="fas ${form.icon}"></i>${form.title}
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="main-button">
+                        <div class="button-content">
+                            <i class="fas fa-database"></i>
+                            Veri Tabanı
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="sub-menu">
+                        ${departmentMenus[dept].database.map(item => `
+                            <a href="#" data-form="${item.id}">
+                                <i class="fas ${item.icon}"></i>${item.title}
+                            </a>
+                        `).join('')}
+                    </div>
+                </div>
+            </nav>
 
             <div class="content-area">
                 <!-- Form ve önizleme buraya yüklenecek -->
@@ -213,20 +218,32 @@ async function generatePreview(formName, dept) {
 
 function initializeMenuInteractions() {
     const menuItems = document.querySelectorAll('.menu-item');
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const menuBar = document.querySelector('.menu-bar');
     
+    // Mobil menü toggle
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            menuBar.classList.toggle('active');
+        });
+    }
+
     menuItems.forEach(item => {
         const mainButton = item.querySelector('.main-button');
         const subMenu = item.querySelector('.sub-menu');
         
-        mainButton.addEventListener('mouseenter', () => {
+        mainButton.addEventListener('click', (e) => {
+            const isActive = subMenu.classList.contains('active');
+            
+            // Diğer tüm menüleri kapat
             document.querySelectorAll('.sub-menu').forEach(menu => {
-                if (menu !== subMenu) menu.classList.remove('active');
+                menu.classList.remove('active');
             });
-            subMenu.classList.add('active');
-        });
-
-        item.addEventListener('mouseleave', () => {
-            subMenu.classList.remove('active');
+            
+            // Tıklanan menüyü aç/kapat
+            if (!isActive) {
+                subMenu.classList.add('active');
+            }
         });
         
         // Alt menü öğelerine tıklama işleyicisi ekle
@@ -238,8 +255,22 @@ function initializeMenuInteractions() {
                 const dept = document.querySelector('.department-header h1').textContent.toLowerCase();
                 if (formName) {
                     loadForm(formName, dept);
+                    
+                    // Mobil görünümde menüyü kapat
+                    if (window.innerWidth <= 768) {
+                        menuBar.classList.remove('active');
+                    }
                 }
             });
         });
+    });
+
+    // Sayfa dışına tıklandığında mobil menüyü kapat
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768 && 
+            !e.target.closest('.menu-bar') && 
+            !e.target.closest('.mobile-menu-toggle')) {
+            menuBar.classList.remove('active');
+        }
     });
 }
