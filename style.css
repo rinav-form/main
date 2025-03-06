@@ -363,9 +363,6 @@ body {
 
 .content-area {
     grid-area: main;
-    margin-top: 100px;
-    margin-left: 250px;
-    padding: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -488,8 +485,8 @@ body {
     }
 
     .content-area {
-        margin-left: 220px;
-        margin-top: 110px;
+        margin-left: 20px;
+        margin-top: 20px;
         height: calc(100vh - 130px);
     }
 
