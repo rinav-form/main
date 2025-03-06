@@ -5,6 +5,7 @@ function selectDepartment(dept) {
 }
 
 function loadDepartmentHomepage(dept) {
+    const deptName = getDepartmentName(dept);
     const mainContent = document.getElementById('mainContent');
     mainContent.innerHTML = `
         <button class="back-button" onclick="returnToDepartmentSelection()">
@@ -14,9 +15,12 @@ function loadDepartmentHomepage(dept) {
         <div class="department-homepage">
             <div class="department-header">
                 <div class="dept-logo-header">
-                    <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
+                    <img src="images/logos/${dept}-logo.svg" alt="${deptName.short} Logo">
                 </div>
-                <h1>${dept.toUpperCase()}</h1>
+                <div class="header-text">
+                    <h1>${deptName.short}</h1>
+                    <p>${deptName.long}</p>
+                </div>
             </div>
             
             <nav class="menu-bar">
@@ -35,6 +39,32 @@ function loadDepartmentHomepage(dept) {
 function returnToDepartmentSelection() {
     document.getElementById('departmentModal').classList.remove('hidden');
     document.getElementById('mainContent').classList.add('hidden');
+}
+
+function getDepartmentName(dept) {
+    const names = {
+        lspd: {
+            short: 'LSPD',
+            long: 'Los Santos Police Department'
+        },
+        lssd: {
+            short: 'LSSD',
+            long: 'Los Santos Sheriff Department'
+        },
+        lsfmd: {
+            short: 'LSFMD',
+            long: 'Los Santos Fire & Medical Department'
+        },
+        fib: {
+            short: 'FIB',
+            long: 'Federal Investigation Bureau'
+        },
+        doj: {
+            short: 'DOJ',
+            long: 'Department of Justice'
+        }
+    };
+    return names[dept] || { short: dept.toUpperCase(), long: '' };
 }
 
 function getDepartmentMenus(dept) {
@@ -92,6 +122,7 @@ function getDepartmentMenus(dept) {
                 </div>
             </div>
         `,
+        // Diğer departmanların menüleri devam edecek...
         lssd: `
             <div class="menu-item">
                 <div class="main-button">
@@ -247,7 +278,7 @@ function getDepartmentMenus(dept) {
                 </div>
             </div>
         `,
-        doj: `
+                doj: `
             <div class="menu-item">
                 <div class="main-button">
                     <i class="fas fa-gavel"></i>
@@ -346,6 +377,11 @@ function loadIncidentReportForm(dept) {
                     </div>
 
                     ${getDepartmentSpecificFields(dept)}
+
+                    <button type="button" class="preview-button" onclick="updateBBCode('${dept}')">
+                        <i class="fas fa-eye"></i>
+                        Önizle
+                    </button>
                 </form>
             </div>
             
@@ -359,13 +395,6 @@ function loadIncidentReportForm(dept) {
             </div>
         </div>
     `;
-
-    // Form değişikliklerini dinle
-    const form = document.getElementById('incidentForm');
-    const formElements = form.elements;
-    for (let element of formElements) {
-        element.addEventListener('input', () => updateBBCode(dept));
-    }
 }
 
 function getFormTitle(dept) {
