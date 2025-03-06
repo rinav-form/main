@@ -90,37 +90,34 @@ body {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: transform 0.4s ease;
+    transition: all 0.4s ease;
+    filter: brightness(0.5);
 }
 
 /* Departman arka plan resimleri */
 .lspd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lspd-bg.png');
+                      url('images/backgrounds/lspd-bg.jpg');
 }
 
 .lssd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lssd-bg.png');
+                      url('images/backgrounds/lssd-bg.jpg');
 }
 
 .lsfmd .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/lsfmd-bg.png');
+                      url('images/backgrounds/lsfmd-bg.jpg');
 }
 
 .fib .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/fib-bg.png');
+                      url('images/backgrounds/fib-bg.jpg');
 }
 
 .doj .card-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-                      url('images/backgrounds/doj-bg.png');
-}
-
-.dept-card:hover .card-bg {
-    transform: scale(1.1);
+                      url('images/backgrounds/doj-bg.jpg');
 }
 
 .card-content {
@@ -132,9 +129,10 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 1;
+    transition: all 0.4s ease;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.8)
     );
 }
@@ -143,7 +141,7 @@ body {
     width: 120px;
     height: 120px;
     margin: 2rem 0;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .dept-logo img {
@@ -151,10 +149,6 @@ body {
     height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-.dept-card:hover .dept-logo {
-    transform: scale(1.1);
 }
 
 .card-info {
@@ -168,6 +162,7 @@ body {
     font-weight: 700;
     margin-bottom: 0.8rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
 }
 
 .card-info p {
@@ -175,6 +170,56 @@ body {
     font-size: 1.2rem;
     opacity: 0.9;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+/* Hover efektleri */
+.dept-card:hover .card-bg {
+    filter: brightness(0.8);
+    transform: scale(1.05);
+}
+
+.dept-card:hover .card-content {
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.6)
+    );
+}
+
+/* Departman-spesifik hover efektleri */
+.lspd:hover .card-bg {
+    filter: brightness(0.8) sepia(0.3) hue-rotate(190deg);
+}
+
+.lssd:hover .card-bg {
+    filter: brightness(0.8) sepia(0.3) hue-rotate(320deg);
+}
+
+.lsfmd:hover .card-bg {
+    filter: brightness(0.8) sepia(0.3) hue-rotate(340deg);
+}
+
+.fib:hover .card-bg {
+    filter: brightness(0.8) sepia(0.3) hue-rotate(180deg);
+}
+
+.doj:hover .card-bg {
+    filter: brightness(0.8) sepia(0.3) hue-rotate(100deg);
+}
+
+/* Logo ve metin hover efektleri */
+.dept-card:hover .dept-logo {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+.dept-card:hover .card-info h3 {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.dept-card:hover .card-info p {
+    opacity: 1;
 }
 
 /* Departman-spesifik renkler */
@@ -188,6 +233,7 @@ body {
     display: none;
 }
 
+/* Responsive düzenlemeler */
 @media (max-width: 1400px) {
     .departments-container {
         padding: 2rem;
