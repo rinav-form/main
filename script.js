@@ -1,325 +1,345 @@
-// Departman menülerini tanımla
+// Departman menülerinin tanımlanması
 const departmentMenus = {
     lspd: {
         forms: [
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-            { id: 'search-warrant', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
-            { id: 'vehicle-report', icon: 'fa-car-burst', title: 'Araç Raporu' }
+            { name: "Tutuklama Raporu", id: "arrest-report" },
+            { name: "Olay Raporu", id: "incident-report" },
+            { name: "Trafik Cezası", id: "traffic-ticket" },
+            { name: "Arama Emri", id: "search-warrant" }
         ],
-        database: [
-            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-            { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+        queries: [
+            { name: "Sabıka Kaydı Sorgula", id: "criminal-record" },
+            { name: "Araç Sorgula", id: "vehicle-query" },
+            { name: "Silah Ruhsatı Sorgula", id: "weapon-license" }
         ]
     },
     lssd: {
         forms: [
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-            { id: 'property-seizure', icon: 'fa-box', title: 'Mülk Müsadere' }
+            { name: "Tutuklama Raporu", id: "arrest-report" },
+            { name: "Olay Raporu", id: "incident-report" },
+            { name: "Trafik Cezası", id: "traffic-ticket" },
+            { name: "Arama Emri", id: "search-warrant" }
         ],
-        database: [
-            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-            { id: 'property-search', icon: 'fa-house', title: 'Mülk Sorgula' }
+        queries: [
+            { name: "Sabıka Kaydı Sorgula", id: "criminal-record" },
+            { name: "Araç Sorgula", id: "vehicle-query" },
+            { name: "Silah Ruhsatı Sorgula", id: "weapon-license" }
         ]
     },
     lsfmd: {
         forms: [
-            { id: 'medical-report', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'treatment-log', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
-            { id: 'fire-report', icon: 'fa-fire', title: 'Yangın Raporu' }
+            { name: "Tedavi Raporu", id: "treatment-report" },
+            { name: "Otopsi Raporu", id: "autopsy-report" },
+            { name: "Psikolojik Değerlendirme", id: "psych-eval" }
         ],
-        database: [
-            { id: 'patient-search', icon: 'fa-user', title: 'Hasta Sorgula' },
-            { id: 'medical-history', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
+        queries: [
+            { name: "Hasta Kaydı Sorgula", id: "patient-record" },
+            { name: "İlaç Geçmişi", id: "medication-history" }
         ]
     },
     fib: {
         forms: [
-            { id: 'investigation-report', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
-            { id: 'surveillance-log', icon: 'fa-eye', title: 'Gözetim Logu' },
-            { id: 'operation-report', icon: 'fa-shield', title: 'Operasyon Raporu' }
+            { name: "Operasyon Raporu", id: "operation-report" },
+            { name: "İstihbarat Raporu", id: "intelligence-report" },
+            { name: "Soruşturma Dosyası", id: "investigation-file" }
         ],
-        database: [
-            { id: 'case-search', icon: 'fa-folder', title: 'Dosya Sorgula' },
-            { id: 'criminal-record', icon: 'fa-user-secret', title: 'Suç Kaydı' },
-            { id: 'intel-database', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+        queries: [
+            { name: "Federal Suç Kaydı", id: "federal-record" },
+            { name: "Örgüt Bilgisi Sorgula", id: "organization-query" },
+            { name: "Güvenlik Seviyesi", id: "security-level" }
         ]
     },
     doj: {
         forms: [
-            { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
-            { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
-            { id: 'hearing-schedule', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
+            { name: "Dava Dosyası", id: "case-file" },
+            { name: "Mahkeme Kararı", id: "court-decision" },
+            { name: "Celp Kağıdı", id: "subpoena" }
         ],
-        database: [
-            { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-            { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
-            { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+        queries: [
+            { name: "Dava Geçmişi", id: "case-history" },
+            { name: "Sabıka Kaydı", id: "criminal-record" },
+            { name: "Avukat Sicili", id: "lawyer-record" }
         ]
     }
 };
 
-function selectDepartment(dept) {
-    document.getElementById('departmentModal').classList.add('hidden');
-    document.getElementById('mainContent').classList.remove('hidden');
-    loadDepartmentHomepage(dept);
+// Departman seçimi fonksiyonu
+function selectDepartment(department) {
+    const modal = document.querySelector('.fullscreen-modal');
+    modal.classList.add('hidden');
+    loadDepartmentHomepage(department);
 }
 
-function loadDepartmentHomepage(dept) {
-    const deptNames = {
-        'lspd': 'Los Santos Police Department',
-        'lssd': 'Los Santos Sheriff Department',
-        'lsfmd': 'Los Santos Fire & Medical Department',
-        'fib': 'Federal Investigation Bureau',
-        'doj': 'Department of Justice'
-    };
+// Departman anasayfasını yükleme fonksiyonu
+function loadDepartmentHomepage(department) {
+    const deptInfo = getDepartmentInfo(department);
+    const mainContent = document.getElementById('main-content');
+    mainContent.classList.remove('hidden');
 
-    const mainContent = document.getElementById('mainContent');
-    mainContent.innerHTML = `
-        <div class="department-homepage">
-            <div class="department-header">
-                <div class="header-left">
-                    ${window.innerWidth <= 768 ? '<button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>' : ''}
-                    <div class="dept-logo-header">
-                        <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
-                    </div>
-                    <div class="dept-info">
-                        <h1>${dept.toUpperCase()}</h1>
-                        <p>${deptNames[dept]}</p>
-                    </div>
+    // Header oluşturma
+    const headerHtml = `
+        <div class="department-header">
+            <div class="header-left">
+                <div class="dept-logo-header">
+                    <img src="images/logos/${department}-logo.png" alt="${deptInfo.name} Logo">
                 </div>
-
-                <a href="#" class="back-button" onclick="goBack()">
-                    <i class="fas fa-arrow-left"></i>
-                    Geri Dön
-                </a>
+                <div class="dept-info">
+                    <h1>${deptInfo.name}</h1>
+                    <p>${deptInfo.description}</p>
+                </div>
             </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    `;
 
-            <nav class="menu-bar">
-                <button class="menu-toggle">
-                    <i class="fas fa-chevron-left"></i>
+    // Menü oluşturma
+    const menuHtml = `
+        <div class="menu-bar">
+            <div class="menu-item">
+                <button class="main-button">
+                    <div class="button-content">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="button-text">Formlar</span>
+                    </div>
+                    <i class="fas fa-chevron-right button-arrow"></i>
                 </button>
-                <div class="menu-item">
-                    <div class="main-button">
-                        <div class="button-content">
+                <div class="sub-menu">
+                    ${departmentMenus[department].forms.map(form => `
+                        <a href="#" onclick="loadForm('${form.id}', '${department}')">
                             <i class="fas fa-file-alt"></i>
-                            <span class="button-text">Formlar</span>
-                        </div>
-                        <i class="fas fa-chevron-down button-arrow"></i>
-                    </div>
-                    <div class="sub-menu">
-                        ${departmentMenus[dept].forms.map(form => `
-                            <a href="#" data-form="${form.id}">
-                                <i class="fas ${form.icon}"></i>
-                                <span class="button-text">${form.title}</span>
-                            </a>
-                        `).join('')}
-                    </div>
+                            <span>${form.name}</span>
+                        </a>
+                    `).join('')}
                 </div>
-
-                <div class="menu-item">
-                    <div class="main-button">
-                        <div class="button-content">
-                            <i class="fas fa-database"></i>
-                            <span class="button-text">Veri Tabanı</span>
-                        </div>
-                        <i class="fas fa-chevron-down button-arrow"></i>
+            </div>
+            <div class="menu-item">
+                <button class="main-button">
+                    <div class="button-content">
+                        <i class="fas fa-database"></i>
+                        <span class="button-text">Sorgular</span>
                     </div>
-                    <div class="sub-menu">
-                        ${departmentMenus[dept].database.map(item => `
-                            <a href="#" data-form="${item.id}">
-                                <i class="fas ${item.icon}"></i>
-                                <span class="button-text">${item.title}</span>
-                            </a>
-                        `).join('')}
-                    </div>
+                    <i class="fas fa-chevron-right button-arrow"></i>
+                </button>
+                <div class="sub-menu">
+                    ${departmentMenus[department].queries.map(query => `
+                        <a href="#" onclick="loadForm('${query.id}', '${department}')">
+                            <i class="fas fa-search"></i>
+                            <span>${query.name}</span>
+                        </a>
+                    `).join('')}
                 </div>
-            </nav>
+            </div>
+        </div>
+        <button class="menu-toggle">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+    `;
 
-            <div class="content-area">
-                <!-- Form ve önizleme buraya yüklenecek -->
+    // İçerik alanı oluşturma
+    const contentHtml = `
+        <div class="content-area">
+            <div class="form-container">
+                <h2>Form</h2>
+                <div id="form-content"></div>
+            </div>
+            <div class="preview-container">
+                <h2>BBCode Önizleme</h2>
+                <div id="preview-content"></div>
             </div>
         </div>
     `;
 
+    mainContent.innerHTML = headerHtml + menuHtml + contentHtml;
     initializeMenuInteractions();
 }
 
-function goBack() {
-    document.getElementById('departmentModal').classList.remove('hidden');
-    document.getElementById('mainContent').classList.add('hidden');
+// Form yükleme fonksiyonu
+function loadForm(formId, department) {
+    const formContent = document.getElementById('form-content');
+    const formHtml = generateFormHtml(formId, department);
+    formContent.innerHTML = formHtml;
+
+    // Form verilerini local storage'dan yükleme
+    loadFormData(formId);
+
+    // Form değişikliklerini dinleme
+    const form = formContent.querySelector('form');
+    form.addEventListener('input', () => {
+        generatePreview(formId);
+        saveFormData(formId, form);
+    });
+
+    // İlk önizlemeyi oluştur
+    generatePreview(formId);
 }
 
-async function loadForm(formName, dept) {
-    const contentArea = document.querySelector('.content-area');
-    
-    try {
-        // Form şablonunu yükle
-        const formResponse = await fetch(`forms/${dept}/${formName}.html`);
-        const formHtml = await formResponse.text();
-        
-        // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.txt`);
-        const bbcodeTemplate = await bbcodeResponse.text();
-        
-        contentArea.innerHTML = `
-            <div class="form-container">
-                <div class="form-content">
-                    ${formHtml}
-                </div>
-                <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
-                    <i class="fas fa-eye"></i> Önizleme Yap
-                </button>
-            </div>
-            <div class="preview-container">
-                <div class="preview-content"></div>
-            </div>
-        `;
-        
-        // Form verilerini localStorage'a kaydet
+// Form verilerini kaydetme
+function saveFormData(formId, form) {
+    const formData = {};
+    const inputs = form.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        formData[input.id] = input.value;
+    });
+    localStorage.setItem(`form_${formId}`, JSON.stringify(formData));
+}
+
+// Form verilerini yükleme
+function loadFormData(formId) {
+    const savedData = localStorage.getItem(`form_${formId}`);
+    if (savedData) {
+        const formData = JSON.parse(savedData);
         const form = document.querySelector('form');
-        if (form) {
-            form.addEventListener('input', (e) => {
-                const formData = new FormData(e.target.form);
-                const formObject = Object.fromEntries(formData);
-                localStorage.setItem(`${dept}_${formName}_data`, JSON.stringify(formObject));
+        Object.keys(formData).forEach(inputId => {
+            const input = form.querySelector(`#${inputId}`);
+            if (input) {
+                input.value = formData[inputId];
+            }
+        });
+    }
+}
+
+// Menü etkileşimlerini başlatma
+function initializeMenuInteractions() {
+    // Ana menü düğmeleri için tıklama olayları
+    const mainButtons = document.querySelectorAll('.main-button');
+    mainButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const subMenu = button.nextElementSibling;
+            const isActive = subMenu.classList.contains('active');
+            
+            // Diğer tüm alt menüleri kapat
+            document.querySelectorAll('.sub-menu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+            document.querySelectorAll('.main-button').forEach(btn => {
+                btn.classList.remove('active');
             });
 
-            // Önceki form verilerini yükle
-            const savedData = localStorage.getItem(`${dept}_${formName}_data`);
-            if (savedData) {
-                const formData = JSON.parse(savedData);
-                Object.entries(formData).forEach(([key, value]) => {
-                    const input = form.elements[key];
-                    if (input) {
-                        input.value = value;
-                    }
-                });
-                // Sayfa yüklendiğinde önizlemeyi otomatik göster
-                generatePreview(formName, dept);
+            // Tıklanan menüyü aç/kapat
+            if (!isActive) {
+                subMenu.classList.add('active');
+                button.classList.add('active');
             }
-        }
-        
-    } catch (error) {
-        console.error('Form yüklenirken hata:', error);
-        contentArea.innerHTML = '<p>Form yüklenirken bir hata oluştu.</p>';
-    }
-}
+        });
+    });
 
-async function generatePreview(formName, dept) {
-    try {
-        // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.txt`);
-        let bbcodeTemplate = await bbcodeResponse.text();
-        
-        // Form verilerini al
-        const formData = new FormData(document.querySelector('form'));
-        const formObject = Object.fromEntries(formData);
-        
-        // Yer tutucuları değiştir
-        for (const [key, value] of Object.entries(formObject)) {
-            const placeholder = `{${key}}`;
-            bbcodeTemplate = bbcodeTemplate.replace(new RegExp(placeholder, 'g'), value);
-        }
-        
-        // Önizlemeyi göster
-        const previewContent = document.querySelector('.preview-content');
-        previewContent.textContent = bbcodeTemplate;
-        
-    } catch (error) {
-        console.error('Önizleme oluşturulurken hata:', error);
-        document.querySelector('.preview-content').innerHTML = 'Önizleme oluşturulurken bir hata oluştu.';
-    }
-}
-
-function initializeMenuInteractions() {
-    const menuItems = document.querySelectorAll('.menu-item');
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const menuBar = document.querySelector('.menu-bar');
+    // Menü toggle düğmesi için tıklama olayı
     const menuToggle = document.querySelector('.menu-toggle');
+    const menuBar = document.querySelector('.menu-bar');
     const contentArea = document.querySelector('.content-area');
-    
-    // Menü daraltma/genişletme
-    if (menuToggle) {
+
+    if (menuToggle && menuBar && contentArea) {
         menuToggle.addEventListener('click', () => {
             menuBar.classList.toggle('collapsed');
             contentArea.classList.toggle('expanded');
-            
-            // Toggle butonu ikonunu değiştir
-            const icon = menuToggle.querySelector('i');
-            if (menuBar.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-left');
-                icon.classList.add('fa-chevron-right');
-            } else {
-                icon.classList.remove('fa-chevron-right');
-                icon.classList.add('fa-chevron-left');
-            }
-
-            // Form ve önizleme container'larının yüksekliğini güncelle
-            setTimeout(() => {
-                window.dispatchEvent(new Event('resize'));
-            }, 300);
+            menuToggle.querySelector('i').classList.toggle('fa-chevron-left');
+            menuToggle.querySelector('i').classList.toggle('fa-chevron-right');
         });
     }
 
-    // Mobil menü toggle
-    if (mobileMenuToggle) {
+    // Mobil menü toggle düğmesi için tıklama olayı
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    if (mobileMenuToggle && menuBar) {
         mobileMenuToggle.addEventListener('click', () => {
             menuBar.classList.toggle('active');
         });
     }
-
-    menuItems.forEach(item => {
-        const mainButton = item.querySelector('.main-button');
-        const subMenu = item.querySelector('.sub-menu');
-        
-        mainButton.addEventListener('click', (e) => {
-            if (!menuBar.classList.contains('collapsed')) {
-                const isActive = subMenu.classList.contains('active');
-                
-                // Diğer tüm menüleri kapat
-                document.querySelectorAll('.sub-menu').forEach(menu => {
-                    menu.classList.remove('active');
-                });
-                
-                // Tıklanan menüyü aç/kapat
-                if (!isActive) {
-                    subMenu.classList.add('active');
-                }
-            }
-        });
-        
-        // Alt menü öğelerine tıklama işleyicisi ekle
-        const subMenuItems = subMenu.querySelectorAll('a');
-        subMenuItems.forEach(subMenuItem => {
-            subMenuItem.addEventListener('click', (e) => {
-                e.preventDefault();
-                const formName = subMenuItem.getAttribute('data-form');
-                const dept = document.querySelector('.department-header h1').textContent.toLowerCase();
-                if (formName) {
-                    loadForm(formName, dept);
-                    
-                    // Mobil görünümde menüyü kapat
-                    if (window.innerWidth <= 768) {
-                        menuBar.classList.remove('active');
-                    }
-                }
-            });
-        });
-    });
-
-    // Sayfa dışına tıklandığında mobil menüyü kapat
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && 
-            !e.target.closest('.menu-bar') && 
-            !e.target.closest('.mobile-menu-toggle')) {
-            menuBar.classList.remove('active');
-        }
-    });
 }
+
+// Departman bilgilerini döndürme fonksiyonu
+function getDepartmentInfo(department) {
+    const deptInfo = {
+        lspd: {
+            name: "Los Santos Polis Departmanı",
+            description: "Hizmet ve Koruma"
+        },
+        lssd: {
+            name: "Los Santos Şerif Departmanı",
+            description: "Toplum için Hizmet"
+        },
+        lsfmd: {
+            name: "Los Santos İtfaiye ve Sağlık Departmanı",
+            description: "Hayat Kurtarma ve Koruma"
+        },
+        fib: {
+            name: "Federal Soruşturma Bürosu",
+            description: "Sadakat, Cesaret, Dürüstlük"
+        },
+        doj: {
+            name: "Adalet Bakanlığı",
+            description: "Adalet ve Hukuk"
+        }
+    };
+    return deptInfo[department];
+}
+
+// Form HTML'i oluşturma fonksiyonu
+function generateFormHtml(formId, department) {
+    // Form şablonları burada tanımlanacak
+    const templates = {
+        "arrest-report": `
+            <form id="arrest-form">
+                <div class="form-group">
+                    <label for="suspect">Şüpheli Adı:</label>
+                    <input type="text" id="suspect" required>
+                </div>
+                <div class="form-group">
+                    <label for="charges">Suçlamalar:</label>
+                    <textarea id="charges" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="details">Olay Detayları:</label>
+                    <textarea id="details" rows="6" required></textarea>
+                </div>
+                <button type="button" class="preview-button" onclick="generatePreview('${formId}')">Önizle</button>
+            </form>
+        `,
+        // Diğer form şablonları buraya eklenecek
+    };
+
+    return templates[formId] || `<p>Form şablonu bulunamadı: ${formId}</p>`;
+}
+
+// BBCode önizleme oluşturma fonksiyonu
+function generatePreview(formId) {
+    const previewContent = document.getElementById('preview-content');
+    const form = document.querySelector('form');
+    
+    if (!form) return;
+
+    let bbcode = '';
+    switch (formId) {
+        case 'arrest-report':
+            const suspect = form.querySelector('#suspect').value;
+            const charges = form.querySelector('#charges').value;
+            const details = form.querySelector('#details').value;
+
+            bbcode = `[divbox=white][center][b]TUTUKLAMA RAPORU[/b][/center]
+
+[b]Şüpheli:[/b] ${suspect}
+
+[b]Suçlamalar:[/b]
+${charges}
+
+[b]Olay Detayları:[/b]
+${details}[/divbox]`;
+            break;
+        // Diğer form tipleri için önizleme şablonları buraya eklenecek
+    }
+
+    previewContent.innerHTML = `<pre class="preview-content">${bbcode}</pre>`;
+}
+
+// Sayfa yüklendiğinde
+document.addEventListener('DOMContentLoaded', () => {
+    // URL'den departman parametresini kontrol et
+    const urlParams = new URLSearchParams(window.location.search);
+    const department = urlParams.get('department');
+
+    if (department && departmentMenus[department]) {
+        // Eğer geçerli bir departman parametresi varsa, direkt o departmanın sayfasını yükle
+        selectDepartment(department);
+    }
+});
