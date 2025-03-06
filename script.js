@@ -102,22 +102,18 @@ function loadDepartmentHomepage(dept) {
             </div>
 
             <nav class="menu-bar">
-                <button class="menu-toggle">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
                 <div class="menu-item">
                     <div class="main-button">
                         <div class="button-content">
                             <i class="fas fa-file-alt"></i>
-                            <span class="button-text">Formlar</span>
+                            Formlar
                         </div>
-                        <i class="fas fa-chevron-down button-arrow"></i>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sub-menu">
                         ${departmentMenus[dept].forms.map(form => `
                             <a href="#" data-form="${form.id}">
-                                <i class="fas ${form.icon}"></i>
-                                <span class="button-text">${form.title}</span>
+                                <i class="fas ${form.icon}"></i>${form.title}
                             </a>
                         `).join('')}
                     </div>
@@ -127,15 +123,14 @@ function loadDepartmentHomepage(dept) {
                     <div class="main-button">
                         <div class="button-content">
                             <i class="fas fa-database"></i>
-                            <span class="button-text">Veri Tabanı</span>
+                            Veri Tabanı
                         </div>
-                        <i class="fas fa-chevron-down button-arrow"></i>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="sub-menu">
                         ${departmentMenus[dept].database.map(item => `
                             <a href="#" data-form="${item.id}">
-                                <i class="fas ${item.icon}"></i>
-                                <span class="button-text">${item.title}</span>
+                                <i class="fas ${item.icon}"></i>${item.title}
                             </a>
                         `).join('')}
                     </div>
@@ -225,27 +220,7 @@ function initializeMenuInteractions() {
     const menuItems = document.querySelectorAll('.menu-item');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const menuBar = document.querySelector('.menu-bar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const contentArea = document.querySelector('.content-area');
     
-    // Menü daraltma/genişletme
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            menuBar.classList.toggle('collapsed');
-            contentArea.classList.toggle('expanded');
-            
-            // Toggle butonu ikonunu değiştir
-            const icon = menuToggle.querySelector('i');
-            if (menuBar.classList.contains('collapsed')) {
-                icon.classList.remove('fa-chevron-left');
-                icon.classList.add('fa-chevron-right');
-            } else {
-                icon.classList.remove('fa-chevron-right');
-                icon.classList.add('fa-chevron-left');
-            }
-        });
-    }
-
     // Mobil menü toggle
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
@@ -258,18 +233,16 @@ function initializeMenuInteractions() {
         const subMenu = item.querySelector('.sub-menu');
         
         mainButton.addEventListener('click', (e) => {
-            if (!menuBar.classList.contains('collapsed')) {
-                const isActive = subMenu.classList.contains('active');
-                
-                // Diğer tüm menüleri kapat
-                document.querySelectorAll('.sub-menu').forEach(menu => {
-                    menu.classList.remove('active');
-                });
-                
-                // Tıklanan menüyü aç/kapat
-                if (!isActive) {
-                    subMenu.classList.add('active');
-                }
+            const isActive = subMenu.classList.contains('active');
+            
+            // Diğer tüm menüleri kapat
+            document.querySelectorAll('.sub-menu').forEach(menu => {
+                menu.classList.remove('active');
+            });
+            
+            // Tıklanan menüyü aç/kapat
+            if (!isActive) {
+                subMenu.classList.add('active');
             }
         });
         
