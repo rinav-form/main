@@ -101,9 +101,9 @@ function loadDepartmentHomepage(department) {
                 <button class="main-button">
                     <div class="button-content">
                         <i class="fas fa-file-alt"></i>
-                        <span class="button-text">Formlar</span>
+                        <span>Formlar</span>
                     </div>
-                    <i class="fas fa-chevron-right button-arrow"></i>
+                    <i class="fas fa-chevron-right"></i>
                 </button>
                 <div class="sub-menu">
                     ${departmentMenus[department].forms.map(form => `
@@ -118,9 +118,9 @@ function loadDepartmentHomepage(department) {
                 <button class="main-button">
                     <div class="button-content">
                         <i class="fas fa-database"></i>
-                        <span class="button-text">Sorgular</span>
+                        <span>Sorgular</span>
                     </div>
-                    <i class="fas fa-chevron-right button-arrow"></i>
+                    <i class="fas fa-chevron-right"></i>
                 </button>
                 <div class="sub-menu">
                     ${departmentMenus[department].queries.map(query => `
@@ -132,9 +132,6 @@ function loadDepartmentHomepage(department) {
                 </div>
             </div>
         </div>
-        <button class="menu-toggle">
-            <i class="fas fa-chevron-left"></i>
-        </button>
     `;
 
     // İçerik alanı oluşturma
@@ -225,22 +222,9 @@ function initializeMenuInteractions() {
         });
     });
 
-    // Menü toggle düğmesi için tıklama olayı
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuBar = document.querySelector('.menu-bar');
-    const contentArea = document.querySelector('.content-area');
-
-    if (menuToggle && menuBar && contentArea) {
-        menuToggle.addEventListener('click', () => {
-            menuBar.classList.toggle('collapsed');
-            contentArea.classList.toggle('expanded');
-            menuToggle.querySelector('i').classList.toggle('fa-chevron-left');
-            menuToggle.querySelector('i').classList.toggle('fa-chevron-right');
-        });
-    }
-
     // Mobil menü toggle düğmesi için tıklama olayı
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const menuBar = document.querySelector('.menu-bar');
     if (mobileMenuToggle && menuBar) {
         mobileMenuToggle.addEventListener('click', () => {
             menuBar.classList.toggle('active');
