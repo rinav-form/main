@@ -182,26 +182,10 @@ body {
 }
 
 /* Departman-spesifik hover efektleri */
-.lspd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.lssd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.lsfmd:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-.fib:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
+.lspd:hover .card-bg,
+.lssd:hover .card-bg,
+.lsfmd:hover .card-bg,
+.fib:hover .card-bg,
 .doj:hover .card-bg {
     filter: brightness(1.5);
     transform: scale(1.05);
@@ -346,6 +330,119 @@ body {
     backdrop-filter: blur(10px);
 }
 
+/* Geri dönüş butonu */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Form container */
+.form-page {
+    display: flex;
+    gap: 2rem;
+    height: calc(100vh - 200px);
+}
+
+.report-form {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    overflow-y: auto;
+}
+
+.preview-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-section textarea {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    padding: 1rem;
+    font-family: 'Consolas', monospace;
+    resize: none;
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    padding: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+/* Copy button */
+.copy-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    background: #45a049;
+}
+
 /* Responsive düzenlemeler */
 @media (max-width: 1400px) {
     .departments-container {
@@ -406,5 +503,9 @@ body {
 
     .card-info p {
         font-size: 0.9rem;
+    }
+
+    .form-page {
+        flex-direction: column;
     }
 }
