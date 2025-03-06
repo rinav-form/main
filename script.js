@@ -1,3 +1,70 @@
+// Departman menülerini tanımla
+const departmentMenus = {
+    lspd: {
+        forms: [
+            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
+            { id: 'search-warrant', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
+            { id: 'vehicle-report', icon: 'fa-car-burst', title: 'Araç Raporu' }
+        ],
+        database: [
+            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+            { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+        ]
+    },
+    lssd: {
+        forms: [
+            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
+            { id: 'property-seizure', icon: 'fa-box', title: 'Mülk Müsadere' }
+        ],
+        database: [
+            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+            { id: 'property-search', icon: 'fa-house', title: 'Mülk Sorgula' }
+        ]
+    },
+    lsfmd: {
+        forms: [
+            { id: 'medical-report', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
+            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+            { id: 'treatment-log', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
+            { id: 'fire-report', icon: 'fa-fire', title: 'Yangın Raporu' }
+        ],
+        database: [
+            { id: 'patient-search', icon: 'fa-user', title: 'Hasta Sorgula' },
+            { id: 'medical-history', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
+        ]
+    },
+    fib: {
+        forms: [
+            { id: 'investigation-report', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
+            { id: 'surveillance-log', icon: 'fa-eye', title: 'Gözetim Logu' },
+            { id: 'operation-report', icon: 'fa-shield', title: 'Operasyon Raporu' }
+        ],
+        database: [
+            { id: 'case-search', icon: 'fa-folder', title: 'Dosya Sorgula' },
+            { id: 'criminal-record', icon: 'fa-user-secret', title: 'Suç Kaydı' },
+            { id: 'intel-database', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+        ]
+    },
+    doj: {
+        forms: [
+            { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
+            { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
+            { id: 'hearing-schedule', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
+        ],
+        database: [
+            { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
+            { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
+            { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+        ]
+    }
+};
+
 function selectDepartment(dept) {
     document.getElementById('departmentModal').classList.add('hidden');
     document.getElementById('mainContent').classList.remove('hidden');
@@ -17,59 +84,53 @@ function loadDepartmentHomepage(dept) {
     mainContent.innerHTML = `
         <div class="department-homepage">
             <div class="department-header">
+                <div class="header-left">
+                    <div class="dept-logo-header">
+                        <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
+                    </div>
+                    <div class="dept-info">
+                        <h1>${dept.toUpperCase()}</h1>
+                        <p>${deptNames[dept]}</p>
+                    </div>
+                </div>
+                
+                <nav class="menu-bar">
+                    <div class="menu-item">
+                        <div class="main-button">
+                            <i class="fas fa-file-alt"></i>
+                            Formlar
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="sub-menu">
+                            ${departmentMenus[dept].forms.map(form => `
+                                <a href="#" data-form="${form.id}">
+                                    <i class="fas ${form.icon}"></i>${form.title}
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="main-button">
+                            <i class="fas fa-database"></i>
+                            Veri Tabanı
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="sub-menu">
+                            ${departmentMenus[dept].database.map(item => `
+                                <a href="#" data-form="${item.id}">
+                                    <i class="fas ${item.icon}"></i>${item.title}
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                </nav>
+
                 <a href="#" class="back-button" onclick="goBack()">
                     <i class="fas fa-arrow-left"></i>
                     Geri Dön
                 </a>
-                <div class="dept-logo-header">
-                    <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
-                </div>
-                <div>
-                    <h1>${dept.toUpperCase()}</h1>
-                    <p style="opacity: 0.8; font-size: 0.9rem;">${deptNames[dept]}</p>
-                </div>
             </div>
-            
-            <nav class="menu-bar">
-                <div class="menu-item">
-                    <div class="main-button">
-                        <i class="fas fa-file-alt"></i>
-                        Formlar
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#" data-form="incident-report"><i class="fas fa-pen"></i>Olay Raporu</a>
-                        <a href="#" data-form="arrest-report"><i class="fas fa-handcuffs"></i>Tutuklama Raporu</a>
-                        <a href="#" data-form="patrol-log"><i class="fas fa-car"></i>Devriye Logu</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="main-button">
-                        <i class="fas fa-database"></i>
-                        Veri Tabanı
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#"><i class="fas fa-user-check"></i>Personel Sorgula</a>
-                        <a href="#"><i class="fas fa-car"></i>Araç Sorgula</a>
-                        <a href="#"><i class="fas fa-fingerprint"></i>Sabıka Sorgula</a>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="main-button">
-                        <i class="fas fa-cog"></i>
-                        Yönetim
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="sub-menu">
-                        <a href="#"><i class="fas fa-users"></i>Personel Yönetimi</a>
-                        <a href="#"><i class="fas fa-clipboard-list"></i>Görev Yönetimi</a>
-                        <a href="#"><i class="fas fa-chart-bar"></i>İstatistikler</a>
-                    </div>
-                </div>
-            </nav>
 
             <div class="content-area">
                 <!-- Form ve önizleme buraya yüklenecek -->
