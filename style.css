@@ -1,275 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+/* Genel Stiller */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
+    background-color: #f0f2f5;
     min-height: 100vh;
-    background: #0f0f0f;
-    color: white;
-    overflow: hidden;
 }
 
-.background {
+/* Modal Stili */
+.modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-}
-
-.gradient-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150%;
-    height: 150%;
-    background: linear-gradient(45deg, 
-        rgba(76, 0, 255, 0.15),
-        rgba(255, 0, 0, 0.15),
-        rgba(0, 255, 255, 0.15));
-    animation: gradientBG 15s ease infinite;
-    background-size: 400% 400%;
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.fullscreen-modal {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
-.departments-container {
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    padding: 3rem;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-}
-
-.dept-card {
-    position: relative;
-    height: 90vh;
-    width: calc(20% - 2rem);
-    min-width: 180px;
-    border-radius: 20px;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 100ms ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.dept-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-.card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: all 100ms ease;
-    filter: brightness(0.6);
-}
-
-/* Departman arka plan resimleri */
-.lspd .card-bg {
-    background-image: url('images/backgrounds/lspd-bg.png');
-}
-
-.lssd .card-bg {
-    background-image: url('images/backgrounds/lssd-bg.png');
-}
-
-.lsfmd .card-bg {
-    background-image: url('images/backgrounds/lsfmd-bg.png');
-}
-
-.fib .card-bg {
-    background-image: url('images/backgrounds/fib-bg.png');
-}
-
-.doj .card-bg {
-    background-image: url('images/backgrounds/doj-bg.png');
-}
-
-.card-content {
-    position: relative;
-    height: 100%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1;
-    transition: all 100ms ease;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.4)
-    );
-}
-
-.dept-logo {
-    width: 120px;
-    height: 120px;
-    margin: 2rem 0;
-    transition: all 100ms ease;
-}
-
-.dept-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
-}
-
-.card-info {
-    text-align: center;
-    margin-top: auto;
-    padding-bottom: 2rem;
-}
-
-.card-info h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    transition: all 100ms ease;
-}
-
-.card-info p {
-    color: #fff;
-    font-size: 1rem;
-    opacity: 0.9;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    transition: all 100ms ease;
-}
-
-.dept-card:hover .card-content {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.2),
-        rgba(0, 0, 0, 0.6)
-    );
-}
-
-.dept-card:hover .card-bg {
-    filter: brightness(1.5);
-    transform: scale(1.05);
-}
-
-/* Logo ve metin hover efektleri */
-.dept-card:hover .dept-logo {
-    transform: scale(1.1);
-}
-
-.dept-card:hover .card-info h3 {
-    transform: scale(1.1);
-}
-
-.dept-card:hover .card-info p {
-    opacity: 1;
-}
-
-/* Departman-spesifik renkler */
-.lspd .card-info h3 { color: #4169E1; }
-.lssd .card-info h3 { color: #4CAF50; }
-.lsfmd .card-info h3 { color: #FF4136; }
-.fib .card-info h3 { color: #00BCD4; }
-.doj .card-info h3 { color: #FFD700; }
-
-.hidden {
+.modal.hidden {
     display: none;
 }
 
-/* Department Homepage Styles */
-.department-homepage {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+.modal-content {
+    background: white;
     padding: 2rem;
-    padding-top: 80px;
-    padding-bottom: 100px;
-    overflow-y: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
 }
 
-/* Header pozisyonu */
+.modal-content h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    font-size: 2.5rem;
+}
+
+/* Departman Grid */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Departman Kartları */
+.department-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.department-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.department-card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.department-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Departman Renkleri */
+.lspd h2 { color: #4169E1; }
+.lssd h2 { color: #4CAF50; }
+.lsfmd h2 { color: #f44336; }
+.fib h2 { color: #2196F3; }
+.doj h2 { color: #9C27B0; }
+
+/* Ana İçerik */
+#mainContent {
+    min-height: 100vh;
+    background: #f0f2f5;
+}
+
+#mainContent.hidden {
+    display: none;
+}
+
+/* Departman Ana Sayfası */
+.department-homepage {
+    min-height: 100vh;
+    padding: 1rem;
+}
+
 .department-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(10px);
+    background: white;
     padding: 1rem 2rem;
-    z-index: 100;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.dept-logo-header {
+.dept-logo-header img {
     width: 80px;
     height: 80px;
 }
 
-.dept-logo-header img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
-}
-
-.header-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
 .header-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .header-text p {
-    font-size: 1rem;
-    opacity: 0.8;
-    font-weight: 400;
+    color: #666;
 }
 
-/* Menu Bar Styles */
+/* Geri Dönüş Butonu */
+.back-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.back-button:hover {
+    background: #f0f2f5;
+}
+
+/* Menü Çubuğu */
 .menu-bar {
     display: flex;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
-    margin-top: 90px;
 }
 
 .menu-item {
@@ -277,131 +167,70 @@ body {
 }
 
 .main-button {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.7rem 1.5rem;
+    background: white;
+    padding: 0.8rem 1.5rem;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    gap: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.main-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.main-button i {
-    font-size: 1.2rem;
+.main-button i:last-child {
+    margin-left: 0.5rem;
 }
 
 .sub-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 180px;
-    background: rgba(20, 20, 20, 0.95);
+    background: white;
     border-radius: 8px;
-    padding: 0.4rem;
-    margin-top: 0.4rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: none;
-    flex-direction: column;
-    gap: 0.2rem;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     z-index: 100;
+    min-width: 200px;
 }
 
 .sub-menu.active {
-    display: flex;
+    display: block;
 }
 
 .sub-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 0.6rem 0.8rem;
-    border-radius: 8px;
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    transition: all 0.2s ease;
-    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 5px;
 }
 
 .sub-menu a:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f0f2f5;
 }
 
-.sub-menu i {
-    font-size: 1.1rem;
-    width: 20px;
-    text-align: center;
-}
-
-/* Geri dönüş butonu */
-.back-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    font-size: 0.9rem;
-}
-
-.back-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
-}
-
-/* Form container */
+/* Form Sayfası */
 .form-page {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     gap: 2rem;
-    min-height: calc(100vh - 180px);
-    padding-bottom: 100px;
+    padding: 1rem;
 }
 
 .report-form {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+    background: white;
     padding: 2rem;
-    backdrop-filter: blur(10px);
-    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.preview-section {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
-}
-
-.preview-section textarea {
-    flex: 1;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
-    padding: 1rem;
-    font-family: 'Consolas', monospace;
-    resize: none;
-    margin-top: 1rem;
+.report-form h2 {
+    margin-bottom: 2rem;
+    color: #333;
 }
 
 .form-group {
@@ -411,21 +240,17 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    color: #666;
 }
 
-.form-group input[type="text"],
-.form-group input[type="datetime-local"],
-.form-group input[type="number"],
+.form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
     padding: 0.8rem;
-    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
 .form-group textarea {
@@ -433,170 +258,104 @@ body {
     resize: vertical;
 }
 
-.form-group select option {
-    background: #1a1a1a;
-    color: white;
-}
-
-/* Preview button */
 .preview-button {
-    background: #2196F3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.preview-button:hover {
-    background: #1976D2;
-}
-
-.preview-button i {
-    font-size: 1.1rem;
-}
-
-/* Copy button */
-.copy-button {
     background: #4CAF50;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
+    gap: 0.5rem;
+    margin-top: 2rem;
 }
 
-.copy-button:hover {
+.preview-button:hover {
     background: #45a049;
 }
 
-.content-area {
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
+/* Önizleme Bölümü */
+.preview-section {
+    background: white;
     padding: 2rem;
-    backdrop-filter: blur(10px);
-    overflow-y: auto;
-    margin-top: 1rem;
-    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 1rem;
 }
 
-/* Responsive düzenlemeler */
-@media (max-width: 1400px) {
-    .departments-container {
-        padding: 2rem;
-        gap: 1.5rem;
-    }
+.preview-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
 
-    .dept-card {
-        width: calc(20% - 1.5rem);
-        min-width: 160px;
+#bbcodePreview {
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    resize: vertical;
+}
+
+.copy-button {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.copy-button:hover {
+    background: #1e88e5;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1400px) {
+    .department-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 1200px) {
-    .departments-container {
-        padding: 1.5rem;
-        gap: 1rem;
+    .department-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .dept-card {
-        width: calc(20% - 1rem);
-        min-width: 150px;
+    
+    .form-page {
+        grid-template-columns: 1fr;
     }
-
-    .card-info h3 {
-        font-size: 2rem;
-    }
-
-    .card-info p {
-        font-size: 1rem;
-    }
-
-    .dept-logo {
-        width: 80px;
-        height: 80px;
-        margin: 1rem 0;
-    }
-
-    .menu-bar {
-        gap: 0.5rem;
-    }
-
-    .main-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.85rem;
-    }
-
-    .department-header {
-        padding: 0.8rem 1.5rem;
+    
+    .preview-section {
+        position: static;
     }
 }
 
 @media (max-width: 768px) {
-    .departments-container {
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding: 1rem;
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .department-header {
+        flex-direction: column;
+        text-align: center;
         gap: 1rem;
     }
-
-    .dept-card {
-        min-width: 200px;
-        width: 200px;
-        height: 85vh;
-        flex-shrink: 0;
-    }
-
-    .card-info h3 {
-        font-size: 1.8rem;
-    }
-
-    .card-info p {
-        font-size: 0.9rem;
-    }
-
-    .department-homepage {
-        padding: 1rem;
-        padding-top: 70px;
-        padding-bottom: 80px;
-    }
-
+    
     .menu-bar {
         flex-direction: column;
-        width: 100%;
     }
-
-    .menu-item {
-        width: 100%;
-    }
-
+    
     .sub-menu {
-        width: 100%;
-    }
-
-    .form-page {
-        flex-direction: column;
-        height: auto;
-        padding-bottom: 80px;
-    }
-
-    .content-area {
-        margin-bottom: 30px;
-    }
-
-    .preview-section {
-        margin-bottom: 30px;
+        position: static;
+        margin-top: 0.5rem;
     }
 }
