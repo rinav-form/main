@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oto Form Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="departmentModal" class="modal">
+        <div class="modal-content">
+            <h2>Departman Seçimi</h2>
+            <div class="department-buttons">
+                <button onclick="selectDepartment('lspd')">LSPD</button>
+                <button onclick="selectDepartment('lssd')">LSSD</button>
+                <button onclick="selectDepartment('lsfmd')">LSFMD</button>
+                <button onclick="selectDepartment('fib')">FIB</button>
+                <button onclick="selectDepartment('doj')">DOJ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainContent" class="hidden">
+        <!-- Departman içeriği buraya gelecek -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
