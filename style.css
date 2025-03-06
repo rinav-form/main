@@ -211,7 +211,6 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 2.5rem;
-    background: rgba(40, 40, 40, 0.95);
     backdrop-filter: blur(5px);
     z-index: 1000;
     height: 100px;
@@ -261,11 +260,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    background: rgba(40, 40, 40, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(5px);
     height: calc(100vh - 100px);
     position: fixed;
-    top: 100px;
+    top: 0px;
     left: 0;
     width: 200px;
     overflow-y: auto;
