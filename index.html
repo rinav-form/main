@@ -12,81 +12,74 @@
         <div class="gradient-bg"></div>
     </div>
 
-    <div id="departmentModal" class="modal">
-        <div class="modal-content">
-            <div class="header-content">
-                <h2>Los Santos Departmanları</h2>
-                <p class="welcome-text">Form sistemine hoş geldiniz</p>
+    <div id="departmentModal" class="fullscreen-modal">
+        <div class="departments-container">
+            <div class="dept-card lspd" onclick="selectDepartment('lspd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lspd-logo.png" alt="LSPD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSPD</h3>
+                        <p>Los Santos Polis Departmanı</p>
+                        <button class="select-btn">Seç</button>
+                    </div>
+                </div>
             </div>
-            
-            <div class="department-grid">
-                <div class="dept-card lspd" onclick="selectDepartment('lspd')">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="dept-logo">
-                            <img src="images/logos/lspd-logo.png" alt="LSPD Logo">
-                        </div>
-                        <div class="card-info">
-                            <h3>LSPD</h3>
-                            <p>Los Santos Polis Departmanı</p>
-                        </div>
-                        <div class="card-overlay"></div>
+
+            <div class="dept-card lssd" onclick="selectDepartment('lssd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lssd-logo.png" alt="LSSD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSSD</h3>
+                        <p>Los Santos Şerif Departmanı</p>
+                        <button class="select-btn">Seç</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="dept-card lssd" onclick="selectDepartment('lssd')">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="dept-logo">
-                            <img src="images/logos/lssd-logo.png" alt="LSSD Logo">
-                        </div>
-                        <div class="card-info">
-                            <h3>LSSD</h3>
-                            <p>Los Santos Şerif Departmanı</p>
-                        </div>
-                        <div class="card-overlay"></div>
+            <div class="dept-card lsfmd" onclick="selectDepartment('lsfmd')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/lsfmd-logo.png" alt="LSFMD Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>LSFMD</h3>
+                        <p>Los Santos İtfaiye Departmanı</p>
+                        <button class="select-btn">Seç</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="dept-card lsfmd" onclick="selectDepartment('lsfmd')">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="dept-logo">
-                            <img src="images/logos/lsfmd-logo.png" alt="LSFMD Logo">
-                        </div>
-                        <div class="card-info">
-                            <h3>LSFMD</h3>
-                            <p>Los Santos İtfaiye Departmanı</p>
-                        </div>
-                        <div class="card-overlay"></div>
+            <div class="dept-card fib" onclick="selectDepartment('fib')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/fib-logo.png" alt="FIB Logo">
+                    </div>
+                    <div class="card-info">
+                        <h3>FIB</h3>
+                        <p>Federal Soruşturma Bürosu</p>
+                        <button class="select-btn">Seç</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="dept-card fib" onclick="selectDepartment('fib')">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="dept-logo">
-                            <img src="images/logos/fib-logo.png" alt="FIB Logo">
-                        </div>
-                        <div class="card-info">
-                            <h3>FIB</h3>
-                            <p>Federal Soruşturma Bürosu</p>
-                        </div>
-                        <div class="card-overlay"></div>
+            <div class="dept-card doj" onclick="selectDepartment('doj')">
+                <div class="card-bg"></div>
+                <div class="card-content">
+                    <div class="dept-logo">
+                        <img src="images/logos/doj-logo.png" alt="DOJ Logo">
                     </div>
-                </div>
-
-                <div class="dept-card doj" onclick="selectDepartment('doj')">
-                    <div class="card-bg"></div>
-                    <div class="card-content">
-                        <div class="dept-logo">
-                            <img src="images/logos/doj-logo.png" alt="DOJ Logo">
-                        </div>
-                        <div class="card-info">
-                            <h3>DOJ</h3>
-                            <p>Adalet Departmanı</p>
-                        </div>
-                        <div class="card-overlay"></div>
+                    <div class="card-info">
+                        <h3>DOJ</h3>
+                        <p>Adalet Departmanı</p>
+                        <button class="select-btn">Seç</button>
                     </div>
                 </div>
             </div>
