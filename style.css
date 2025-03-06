@@ -96,23 +96,23 @@ body {
 
 /* Departman arka plan resimleri */
 .lspd .card-bg {
-    background-image: url('images/backgrounds/lspd-bg.svg');
+    background-image: url('images/backgrounds/lspd-bg.png');
 }
 
 .lssd .card-bg {
-    background-image: url('images/backgrounds/lssd-bg.svg');
+    background-image: url('images/backgrounds/lssd-bg.png');
 }
 
 .lsfmd .card-bg {
-    background-image: url('images/backgrounds/lsfmd-bg.svg');
+    background-image: url('images/backgrounds/lsfmd-bg.png');
 }
 
 .fib .card-bg {
-    background-image: url('images/backgrounds/fib-bg.svg');
+    background-image: url('images/backgrounds/fib-bg.png');
 }
 
 .doj .card-bg {
-    background-image: url('images/backgrounds/doj-bg.svg');
+    background-image: url('images/backgrounds/doj-bg.png');
 }
 
 .card-content {
@@ -206,11 +206,11 @@ body {
 /* Logo ve metin hover efektleri */
 .dept-card:hover .dept-logo {
     transform: scale(1.1);
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .dept-card:hover .card-info h3 {
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .dept-card:hover .card-info p {
