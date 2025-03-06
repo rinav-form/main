@@ -168,11 +168,6 @@ body {
     transition: all 0.4s ease;
 }
 
-/* Hover efektleri */
-.dept-card:hover .card-bg {
-    filter: brightness(150%);
-    transform: scale(1.05);
-}
 
 .dept-card:hover .card-content {
     background: linear-gradient(
@@ -184,23 +179,23 @@ body {
 
 /* Departman-spesifik hover efektleri */
 .lspd:hover .card-bg {
-    filter: brightness(0.8) hue-rotate(190deg);
+    filter: brightness(1.2) transform: scale(1.05);
 }
 
 .lssd:hover .card-bg {
-    filter: brightness(0.8) hue-rotate(320deg);
+    filter: brightness(1.2) transform: scale(1.05);
 }
 
 .lsfmd:hover .card-bg {
-    filter: brightness(0.8) hue-rotate(340deg);
+    filter: brightness(1.2) transform: scale(1.05);
 }
 
 .fib:hover .card-bg {
-    filter: brightness(0.8) hue-rotate(180deg);
+    filter: brightness(1.2) transform: scale(1.05);
 }
 
 .doj:hover .card-bg {
-    filter: brightness(0.8) hue-rotate(100deg);
+    filter: brightness(1.2) transform: scale(1.05);
 }
 
 /* Logo ve metin hover efektleri */
