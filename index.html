@@ -5,85 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Los Santos Departmanları</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Arka plan -->
     <div class="background">
         <div class="gradient-bg"></div>
     </div>
 
-    <div id="departmentModal" class="fullscreen-modal">
+    <!-- Departman seçim modalı -->
+    <div class="fullscreen-modal">
         <div class="departments-container">
+            <!-- LSPD -->
             <div class="dept-card lspd" onclick="selectDepartment('lspd')">
                 <div class="card-bg"></div>
                 <div class="card-content">
                     <div class="dept-logo">
-                        <img src="images/logos/lspd-logo.svg" alt="LSPD Logo">
+                        <img src="images/logos/lspd-logo.png" alt="LSPD Logo">
                     </div>
                     <div class="card-info">
                         <h3>LSPD</h3>
-                        <p>Los Santos Police Department</p>
+                        <p>Los Santos Polis Departmanı</p>
                     </div>
                 </div>
             </div>
 
+            <!-- LSSD -->
             <div class="dept-card lssd" onclick="selectDepartment('lssd')">
                 <div class="card-bg"></div>
                 <div class="card-content">
                     <div class="dept-logo">
-                        <img src="images/logos/lssd-logo.svg" alt="LSSD Logo">
+                        <img src="images/logos/lssd-logo.png" alt="LSSD Logo">
                     </div>
                     <div class="card-info">
                         <h3>LSSD</h3>
-                        <p>Los Santos Sheriff Department</p>
+                        <p>Los Santos Şerif Departmanı</p>
                     </div>
                 </div>
             </div>
 
+            <!-- LSFMD -->
             <div class="dept-card lsfmd" onclick="selectDepartment('lsfmd')">
                 <div class="card-bg"></div>
                 <div class="card-content">
                     <div class="dept-logo">
-                        <img src="images/logos/lsfmd-logo.svg" alt="LSFMD Logo">
+                        <img src="images/logos/lsfmd-logo.png" alt="LSFMD Logo">
                     </div>
                     <div class="card-info">
                         <h3>LSFMD</h3>
-                        <p>Los Santos Fire & Medical Department</p>
+                        <p>Los Santos İtfaiye ve Sağlık Departmanı</p>
                     </div>
                 </div>
             </div>
 
+            <!-- FIB -->
             <div class="dept-card fib" onclick="selectDepartment('fib')">
                 <div class="card-bg"></div>
                 <div class="card-content">
                     <div class="dept-logo">
-                        <img src="images/logos/fib-logo.svg" alt="FIB Logo">
+                        <img src="images/logos/fib-logo.png" alt="FIB Logo">
                     </div>
                     <div class="card-info">
                         <h3>FIB</h3>
-                        <p>Federal Investigation Bureau</p>
+                        <p>Federal Soruşturma Bürosu</p>
                     </div>
                 </div>
             </div>
 
+            <!-- DOJ -->
             <div class="dept-card doj" onclick="selectDepartment('doj')">
                 <div class="card-bg"></div>
                 <div class="card-content">
                     <div class="dept-logo">
-                        <img src="images/logos/doj-logo.svg" alt="DOJ Logo">
+                        <img src="images/logos/doj-logo.png" alt="DOJ Logo">
                     </div>
                     <div class="card-info">
                         <h3>DOJ</h3>
-                        <p>Department of Justice</p>
+                        <p>Adalet Bakanlığı</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="mainContent" class="hidden">
-        <!-- Departman içeriği buraya gelecek -->
-    </div>
+    <!-- Ana içerik alanı (başlangıçta gizli) -->
+    <div id="main-content" class="hidden"></div>
 
     <script src="script.js"></script>
 </body>
