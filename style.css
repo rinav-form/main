@@ -91,7 +91,7 @@ body {
     background-size: cover;
     background-position: center;
     transition: all 0.4s ease;
-    filter: brightness(0.5);
+    filter: brightness(80%);
 }
 
 /* Departman arka plan resimleri */
@@ -175,7 +175,7 @@ body {
 
 /* Hover efektleri */
 .dept-card:hover .card-bg {
-    filter: brightness(1.2);
+    filter: brightness(150%);
     transform: scale(1.05);
 }
 
@@ -224,10 +224,10 @@ body {
 
 /* Departman-spesifik renkler */
 .lspd .card-info h3 { color: #4169E1; }
-.lssd .card-info h3 { color: #FFD700; }
+.lssd .card-info h3 { color: #4CAF50; }
 .lsfmd .card-info h3 { color: #FF4136; }
 .fib .card-info h3 { color: #00BCD4; }
-.doj .card-info h3 { color: #4CAF50; }
+.doj .card-info h3 { color: #FFD700; }
 
 .hidden {
     display: none;
