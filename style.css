@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
     background: #0f0f0f;
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .background {
@@ -44,7 +44,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-.modal {
+.fullscreen-modal {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -55,49 +55,29 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.modal-content {
-    width: 90%;
-    max-width: 1200px;
-    background: rgba(25, 25, 25, 0.95);
-    border-radius: 20px;
-    padding: 3rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.header-content {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.header-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(45deg, #fff, #7e7e7e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-}
-
-.welcome-text {
-    color: #888;
-    font-size: 1.1rem;
-}
-
-.department-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
+.departments-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 }
 
 .dept-card {
     position: relative;
-    height: 350px;
+    height: 100%;
+    flex: 1;
+    max-width: 300px;
     border-radius: 15px;
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease;
+}
+
+.dept-card:hover {
+    flex: 1.2;
 }
 
 .card-bg {
@@ -152,106 +132,4 @@ body {
     z-index: 1;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.8)
-    );
-}
-
-.dept-logo {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
-
-.dept-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-}
-
-.dept-card:hover .dept-logo {
-    transform: scale(1.1);
-}
-
-.card-info {
-    text-align: center;
-}
-
-.card-info h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.card-info p {
-    color: #fff;
-    font-size: 1rem;
-    opacity: 0.9;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Departman-spesifik efektler */
-.lspd .card-content {
-    border-bottom: 4px solid #4169E1;
-}
-
-.lssd .card-content {
-    border-bottom: 4px solid #FFD700;
-}
-
-.lsfmd .card-content {
-    border-bottom: 4px solid #FF4136;
-}
-
-.fib .card-content {
-    border-bottom: 4px solid #00BCD4;
-}
-
-.doj .card-content {
-    border-bottom: 4px solid #4CAF50;
-}
-
-.dept-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, 
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.05));
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.dept-card:hover::after {
-    opacity: 1;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Responsive düzenlemeler */
-@media (max-width: 768px) {
-    .modal-content {
-        padding: 2rem;
-    }
-    
-    .header-content h2 {
-        font-size: 2rem;
-    }
-    
-    .department-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-    }
-    
-    .dept-card {
-        height: 300px;
-    }
-}
+        rgba(0, 0, 0, 0
