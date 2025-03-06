@@ -106,10 +106,16 @@ function buildForm(formData) {
     });
 
     formHTML += `
-                    <button type="button" class="preview-button" onclick="previewBBCode()">
-                        <i class="fas fa-eye"></i>
-                        Önizle
-                    </button>
+                    <div class="form-buttons">
+                        <button type="button" class="clear-button" onclick="clearForm()">
+                            <i class="fas fa-trash"></i>
+                            Formu Temizle
+                        </button>
+                        <button type="button" class="preview-button" onclick="previewBBCode()">
+                            <i class="fas fa-eye"></i>
+                            Önizle
+                        </button>
+                    </div>
                 </form>
             </div>
             
@@ -168,6 +174,34 @@ function createFormField(field) {
 
     fieldHTML += '</div>';
     return fieldHTML;
+}
+
+// Form Temizleme Fonksiyonu
+function clearForm() {
+    const form = document.getElementById('incidentForm');
+    const confirmClear = confirm('Formdaki tüm bilgiler silinecek. Emin misiniz?');
+    
+    if (confirmClear) {
+        form.querySelectorAll('input, select, textarea').forEach(element => {
+            if (element.type === 'select-one') {
+                element.selectedIndex = 0;
+            } else {
+                element.value = '';
+            }
+        });
+        
+        // BBCode önizlemeyi de temizle
+        document.getElementById('bbcodePreview').value = '';
+        
+        // Başarılı temizleme mesajı
+        const clearButton = form.querySelector('.clear-button');
+        const originalText = clearButton.innerHTML;
+        clearButton.innerHTML = '<i class="fas fa-check"></i> Temizlendi';
+        
+        setTimeout(() => {
+            clearButton.innerHTML = originalText;
+        }, 2000);
+    }
 }
 
 // BBCode İşlemleri
