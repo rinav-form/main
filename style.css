@@ -371,7 +371,6 @@ body {
     width: 59.2%;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .copy-button:hover {
@@ -386,7 +385,6 @@ body {
     width: 40%;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 .reset-button:hover, .clear-preview-button:hover {
