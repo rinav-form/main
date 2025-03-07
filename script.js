@@ -1,66 +1,106 @@
 // Departman menülerini tanımla
 const departmentMenus = {
     lspd: {
-        forms: [
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-            { id: 'search-warrant', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
-            { id: 'vehicle-report', icon: 'fa-car-burst', title: 'Araç Raporu' }
-        ],
-        database: [
-            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-            { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+        menus: [
+            {
+                title: 'Formlar',
+                items: [
+                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+                    { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
+                    { id: 'search-warrant', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
+                    { id: 'vehicle-report', icon: 'fa-car-burst', title: 'Araç Raporu' }
+                ]
+            },
+            {
+                title: 'Veri Tabanı',
+                items: [
+                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+                ]
+            }
         ]
     },
     lssd: {
-        forms: [
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-            { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-            { id: 'property-seizure', icon: 'fa-box', title: 'Mülk Müsadere' }
-        ],
-        database: [
-            { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-            { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-            { id: 'property-search', icon: 'fa-house', title: 'Mülk Sorgula' }
+        menus: [
+            {
+                title: 'Formlar',
+                items: [
+                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+                    { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
+                    { id: 'property-seizure', icon: 'fa-box', title: 'Mülk Müsadere' }
+                ]
+            },
+            {
+                title: 'Veri Tabanı',
+                items: [
+                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'property-search', icon: 'fa-house', title: 'Mülk Sorgula' }
+                ]
+            }
         ]
     },
     lsfmd: {
-        forms: [
-            { id: 'medical-report', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
-            { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-            { id: 'treatment-log', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
-            { id: 'fire-report', icon: 'fa-fire', title: 'Yangın Raporu' }
-        ],
-        database: [
-            { id: 'patient-search', icon: 'fa-user', title: 'Hasta Sorgula' },
-            { id: 'medical-history', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
+        menus: [
+            {
+                title: 'Formlar',
+                items: [
+                    { id: 'medical-report', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
+                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'treatment-log', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
+                    { id: 'fire-report', icon: 'fa-fire', title: 'Yangın Raporu' }
+                ]
+            },
+            {
+                title: 'Veri Tabanı',
+                items: [
+                    { id: 'patient-search', icon: 'fa-user', title: 'Hasta Sorgula' },
+                    { id: 'medical-history', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
+                ]
+            }
         ]
     },
     fib: {
-        forms: [
-            { id: 'investigation-report', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
-            { id: 'surveillance-log', icon: 'fa-eye', title: 'Gözetim Logu' },
-            { id: 'operation-report', icon: 'fa-shield', title: 'Operasyon Raporu' }
-        ],
-        database: [
-            { id: 'case-search', icon: 'fa-folder', title: 'Dosya Sorgula' },
-            { id: 'criminal-record', icon: 'fa-user-secret', title: 'Suç Kaydı' },
-            { id: 'intel-database', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+        menus: [
+            {
+                title: 'Formlar',
+                items: [
+                    { id: 'investigation-report', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
+                    { id: 'surveillance-log', icon: 'fa-eye', title: 'Gözetim Logu' },
+                    { id: 'operation-report', icon: 'fa-shield', title: 'Operasyon Raporu' }
+                ]
+            },
+            {
+                title: 'Veri Tabanı',
+                items: [
+                    { id: 'case-search', icon: 'fa-folder', title: 'Dosya Sorgula' },
+                    { id: 'criminal-record', icon: 'fa-user-secret', title: 'Suç Kaydı' },
+                    { id: 'intel-database', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+                ]
+            }
         ]
     },
     doj: {
-        forms: [
-            { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
-            { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
-            { id: 'hearing-schedule', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
-        ],
-        database: [
-            { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-            { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
-            { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+        menus: [
+            {
+                title: 'Formlar',
+                items: [
+                    { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
+                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
+                    { id: 'hearing-schedule', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
+                ]
+            },
+            {
+                title: 'Veri Tabanı',
+                items: [
+                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
+                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
+                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+                ]
+            }
         ]
     }
 };
@@ -101,39 +141,24 @@ function loadDepartmentHomepage(dept) {
             </div>
 
             <nav class="menu-bar">
-                <div class="menu-item">
-                    <div class="main-button">
-                        <div class="button-content">
-                            <i class="fas fa-file-alt"></i>
-                            Formlar
+                ${departmentMenus[dept].menus.map(menu => `
+                    <div class="menu-item">
+                        <div class="main-button">
+                            <div class="button-content">
+                                <i class="fas fa-${menu.icon || 'bars'}"></i>
+                                ${menu.title}
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
                         </div>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="sub-menu">
-                        ${departmentMenus[dept].forms.map(form => `
-                            <a href="#" data-form="${form.id}">
-                                <i class="fas ${form.icon}"></i>${form.title}
-                            </a>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="main-button">
-                        <div class="button-content">
-                            <i class="fas fa-database"></i>
-                            Veri Tabanı
+                        <div class="sub-menu">
+                            ${menu.items.map(item => `
+                                <a href="#" data-form="${item.id}">
+                                    <i class="fas ${item.icon}"></i>${item.title}
+                                </a>
+                            `).join('')}
                         </div>
-                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="sub-menu">
-                        ${departmentMenus[dept].database.map(item => `
-                            <a href="#" data-form="${item.id}">
-                                <i class="fas ${item.icon}"></i>${item.title}
-                            </a>
-                        `).join('')}
-                    </div>
-                </div>
+                `).join('')}
             </nav>
 
             <div class="content-area">
