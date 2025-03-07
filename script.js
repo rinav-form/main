@@ -195,31 +195,37 @@ async function loadForm(formName, dept) {
     try {
         // Form şablonunu yükle
         const formResponse = await fetch(`forms/${dept}/${formName}.json`);
+        if (!formResponse.ok) {
+            throw new Error('Form şablonu yüklenirken hata oluştu.');
+        }
         const formJson = await formResponse.json();
         
         // BBCode şablonunu yükle
         const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.bbcode`);
+        if (!bbcodeResponse.ok) {
+            throw new Error('BBCode şablonu yüklenirken hata oluştu.');
+        }
         const bbcodeTemplate = await bbcodeResponse.text();
         
         contentArea.innerHTML = `
             <div class="form-container">
                 <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
-                        <i class="fas fa-eye"></i> Önizleme Yap
+                    <i class="fas fa-eye"></i> Önizleme Yap
                 </button>
-                 <button class="reset-button" onclick="resetForm('${formName}', '${dept}')">
-                        <i class="fas fa-undo"></i> Temizle
+                <button class="reset-button" onclick="resetForm('${formName}', '${dept}')">
+                    <i class="fas fa-undo"></i> Temizle
                 </button>
                 <form class="form-content">
                     ${generateFormHtml(formJson)}
                 </form>
             </div>
             <div class="preview-container">
-                 <button class="copy-button" onclick="copyPreview()">
-                        <i class="fas fa-copy"></i> Kopyala
-                    </button>
-                    <button class="clear-preview-button" onclick="clearPreview()">
-                        <i class="fas fa-trash"></i> Temizle
-                    </button>
+                <button class="copy-button" onclick="copyPreview()">
+                    <i class="fas fa-copy"></i> Kopyala
+                </button>
+                <button class="clear-preview-button" onclick="clearPreview()">
+                    <i class="fas fa-trash"></i> Temizle
+                </button>
                 <div class="preview-content"></div>
             </div>
         `;
@@ -245,57 +251,57 @@ async function loadForm(formName, dept) {
 function generateFormHtml(formJson) {
     return formJson.map(field => {
         switch (field.type) {
-    case 'text':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">${field.label}</label>
-                <input type="text" id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}" />
-            </div>
-        `;
-    case 'textarea':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">${field.label}</label>
-                <textarea id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}"></textarea>
-            </div>
-        `;
-    case 'select':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">${field.label}</label>
-                <select id="${field.id}" name="${field.id}" required="${field.required}">
-                    ${field.options.map(option => `
-                        <option value="${option.value}">${option.label}</option>
-                    `).join('')}
-                </select>
-            </div>
-        `;
-    case 'date':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">${field.label}</label>
-                <input type="date" id="${field.id}" name="${field.id}" required="${field.required}" />
-            </div>
-        `;
-    case 'time':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">${field.label}</label>
-                <input type="time" id="${field.id}" name="${field.id}" required="${field.required}" />
-            </div>
-        `;
-    case 'checkbox':
-        return `
-            <div class="form-group">
-                <label for="${field.id}">
-                    <input type="checkbox" id="${field.id}" name="${field.id}" required="${field.required}" />
-                    ${field.label}
-                </label>
-            </div>
-        `;
-    default:
-        return '';
-}
+            case 'text':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="text" id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}" />
+                    </div>
+                `;
+            case 'textarea':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <textarea id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}"></textarea>
+                    </div>
+                `;
+            case 'select':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <select id="${field.id}" name="${field.id}" required="${field.required}">
+                            ${field.options.map(option => `
+                                <option value="${option.value}">${option.label}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                `;
+            case 'date':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="date" id="${field.id}" name="${field.id}" required="${field.required}" />
+                    </div>
+                `;
+            case 'time':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="time" id="${field.id}" name="${field.id}" required="${field.required}" />
+                    </div>
+                `;
+            case 'checkbox':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">
+                            <input type="checkbox" id="${field.id}" name="${field.id}" required="${field.required}" />
+                            ${field.label}
+                        </label>
+                    </div>
+                `;
+            default:
+                return '';
+        }
     }).join('');
 }
 
