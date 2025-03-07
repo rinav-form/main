@@ -3,7 +3,7 @@ const departmentMenus = {
     lspd: {
         menus: [
             {
-                title: 'Davalar',
+                title: 'Patrol',
                 items: [
                     { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
                     { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
@@ -13,7 +13,7 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Dilekçeler',
+                title: 'Metropolitan',
                 items: [
                     { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
                     { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
@@ -21,7 +21,15 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Ruhsatlandırma',
+                title: 'Traffic',
+                items: [
+                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+                ]
+            },
+            {
+                title: 'Detective',
                 items: [
                     { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
                     { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
@@ -94,7 +102,7 @@ const departmentMenus = {
     doj: {
         menus: [
             {
-                title: 'Formlar',
+                title: 'Davalar',
                 items: [
                     { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
                     { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
@@ -102,7 +110,23 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Veri Tabanı',
+                title: 'Dilekçeler',
+                items: [
+                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
+                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
+                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+                ]
+            },
+            {
+                title: 'Ruhsatlandırma',
+                items: [
+                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
+                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
+                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+                ]
+            },
+            {
+                title: 'İstihdam',
                 items: [
                     { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
                     { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
