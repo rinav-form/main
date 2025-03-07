@@ -1,9 +1,17 @@
 [  
+   {
+        "id": "baslik",
+        "label": "Dosya Başlığı",
+        "type": "text",
+        "required": true,
+        "placeholder": "DAVA KARARI, DAVA GÜNCELLEMESİ vb."
+    },
     {
         "id": "tarih",
         "label": "Gönderim Tarihi",
-        "type": "date",
-        "required": true
+        "type": "text",
+        "required": true,
+        "placeholder": "GG.AA.YYYY"
     },
     {
         "id": "savciresim",
