@@ -3,7 +3,7 @@ const departmentMenus = {
     lspd: {
         menus: [
             {
-                title: 'Patrol',
+                title: 'Formlar',
                 items: [
                     { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
                     { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
@@ -13,23 +13,7 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Metropolitan',
-                items: [
-                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
-                ]
-            },
-            {
-                title: 'Traffic',
-                items: [
-                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
-                ]
-            },
-            {
-                title: 'Detective',
+                title: 'Veri Tabanı',
                 items: [
                     { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
                     { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
@@ -102,7 +86,7 @@ const departmentMenus = {
     doj: {
         menus: [
             {
-                title: 'Davalar',
+                title: 'Formlar',
                 items: [
                     { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
                     { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
@@ -110,23 +94,7 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Dilekçeler',
-                items: [
-                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
-                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
-                ]
-            },
-            {
-                title: 'Ruhsatlandırma',
-                items: [
-                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
-                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
-                ]
-            },
-            {
-                title: 'İstihdam',
+                title: 'Veri Tabanı',
                 items: [
                     { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
                     { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
@@ -212,17 +180,17 @@ async function loadForm(formName, dept) {
     
     try {
         // Form şablonunu yükle
-        const formResponse = await fetch(`forms/${dept}/${formName}.html`);
-        const formHtml = await formResponse.text();
+        const formResponse = await fetch(`forms/${dept}/${formName}.json`);
+        const formJson = await formResponse.json();
         
         // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.txt`);
+        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.bbcode`);
         const bbcodeTemplate = await bbcodeResponse.text();
         
         contentArea.innerHTML = `
             <div class="form-container">
                 <div class="form-content">
-                    ${formHtml}
+                    ${generateFormHtml(formJson)}
                 </div>
                 <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
                     <i class="fas fa-eye"></i> Önizleme Yap
@@ -246,10 +214,44 @@ async function loadForm(formName, dept) {
     }
 }
 
+function generateFormHtml(formJson) {
+    return formJson.map(field => {
+        switch (field.type) {
+            case 'text':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="text" id="${field.id}" name="${field.id}" />
+                    </div>
+                `;
+            case 'textarea':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <textarea id="${field.id}" name="${field.id}"></textarea>
+                    </div>
+                `;
+            case 'select':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <select id="${field.id}" name="${field.id}">
+                            ${field.options.map(option => `
+                                <option value="${option.value}">${option.label}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                `;
+            default:
+                return '';
+        }
+    }).join('');
+}
+
 async function generatePreview(formName, dept) {
     try {
         // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.txt`);
+        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.bbcode`);
         let bbcodeTemplate = await bbcodeResponse.text();
         
         // Form verilerini al
