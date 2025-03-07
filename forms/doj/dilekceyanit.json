@@ -1,0 +1,63 @@
+[  
+   {
+        "id": "baslik",
+        "label": "Dosya Başlığı",
+        "type": "text",
+        "required": true,
+        "placeholder": "DAVA KARARI, DAVA GÜNCELLEMESİ vb."
+    },
+    {
+        "id": "tarih",
+        "label": "Gönderim Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "GG.AA.YYYY"
+    },
+    {
+        "id": "savciresim",
+        "label": "Savcı Vesikalık",
+        "type": "text",
+        "required": true,
+        "placeholder": "118x154 boyutunda .png uzantılı resim linki."
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    },
+    {
+        "id": "savcirutbe",
+        "label": "Savcı Rütbesi",
+        "type": "select",
+        "options": [
+            { "value": "Judge", "label": "Yargıç" },
+            { "value": "General Attorney", "label": "Başsavcı" },
+            { "value": "District Attorney", "label": "Savcı" },
+            { "value": "Assistant District Attorney", "label": "Savcı Yardımcısı" }
+        ],
+        "required": true
+    },
+    {
+        "id": "savciposta",
+        "label": "Savcı E-Posta",
+        "type": "text",
+        "required": true,
+        "placeholder": "IC E-posta adresinizi yazınız."
+    },
+    {
+        "id": "avukatadi",
+        "label": "Dava Avukatı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Dava ile ilgilenen avukatın adı ve soyadı."
+    },
+    {
+        "id": "yanit",
+        "label": "Dava Yanıtı",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Dava yanıtınızı yazınız."
+    }
+]
