@@ -9,13 +9,15 @@
         "id": "savciresim",
         "label": "Savcı Vesikalık",
         "type": "text",
-        "required": true
+        "required": trueü,
+        "placeholder": "118x154 boyutunda .png uzantılı resim linki."
     },
     {
         "id": "savciad",
         "label": "Savcı Ad & Soyad",
         "type": "text",
-        "required": true
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
     },
     {
         "id": "savcirutbe",
@@ -33,18 +35,21 @@
         "id": "savciposta",
         "label": "Savcı E-Posta",
         "type": "text",
-        "required": true
+        "required": true,
+        "placeholder": "IC E-posta adresinizi yazınız."
     },
     {
         "id": "avukatadi",
         "label": "Dava Avukatı Ad & Soyad",
         "type": "text",
-        "required": true
+        "required": true,
+        "placeholder": "Dava ile ilgilenen avukatın adı ve soyadı."
     },
     {
         "id": "yanit",
         "label": "Dava Yanıtı",
         "type": "textarea",
-        "required": true
+        "required": true,
+        "placeholder": "Dava yanıtınızı yazınız."
     }
 ]
