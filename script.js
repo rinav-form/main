@@ -5,19 +5,19 @@ const departmentMenus = {
             {
                 title: 'Formlar',
                 items: [
-                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-                    { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-                    { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-                    { id: 'search-warrant', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
-                    { id: 'vehicle-report', icon: 'fa-car-burst', title: 'Araç Raporu' }
+                    { id: 'bos', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'bos', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+                    { id: 'bos', icon: 'fa-car', title: 'Devriye Logu' },
+                    { id: 'bos', icon: 'fa-magnifying-glass', title: 'Arama Emri' },
+                    { id: 'bos', icon: 'fa-car-burst', title: 'Araç Raporu' }
                 ]
             },
             {
                 title: 'Veri Tabanı',
                 items: [
-                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+                    { id: 'bos', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'bos', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'bos', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
                 ]
             }
         ]
@@ -27,18 +27,18 @@ const departmentMenus = {
             {
                 title: 'Formlar',
                 items: [
-                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-                    { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
-                    { id: 'patrol-log', icon: 'fa-car', title: 'Devriye Logu' },
-                    { id: 'property-seizure', icon: 'fa-box', title: 'Mülk Müsadere' }
+                    { id: 'bos', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'bos', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
+                    { id: 'bos', icon: 'fa-car', title: 'Devriye Logu' },
+                    { id: 'bos', icon: 'fa-box', title: 'Mülk Müsadere' }
                 ]
             },
             {
                 title: 'Veri Tabanı',
                 items: [
-                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
-                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
-                    { id: 'property-search', icon: 'fa-house', title: 'Mülk Sorgula' }
+                    { id: 'bos', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'bos', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'bos', icon: 'fa-house', title: 'Mülk Sorgula' }
                 ]
             }
         ]
@@ -48,17 +48,17 @@ const departmentMenus = {
             {
                 title: 'Formlar',
                 items: [
-                    { id: 'medical-report', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
-                    { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
-                    { id: 'treatment-log', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
-                    { id: 'fire-report', icon: 'fa-fire', title: 'Yangın Raporu' }
+                    { id: 'bos', icon: 'fa-notes-medical', title: 'Tıbbi Rapor' },
+                    { id: 'bos', icon: 'fa-pen', title: 'Olay Raporu' },
+                    { id: 'bos', icon: 'fa-hospital', title: 'Tedavi Kaydı' },
+                    { id: 'bos', icon: 'fa-fire', title: 'Yangın Raporu' }
                 ]
             },
             {
                 title: 'Veri Tabanı',
                 items: [
-                    { id: 'patient-search', icon: 'fa-user', title: 'Hasta Sorgula' },
-                    { id: 'medical-history', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
+                    { id: 'bos', icon: 'fa-user', title: 'Hasta Sorgula' },
+                    { id: 'bos', icon: 'fa-file-medical', title: 'Tıbbi Geçmiş' }
                 ]
             }
         ]
@@ -68,17 +68,17 @@ const departmentMenus = {
             {
                 title: 'Formlar',
                 items: [
-                    { id: 'investigation-report', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
-                    { id: 'surveillance-log', icon: 'fa-eye', title: 'Gözetim Logu' },
-                    { id: 'operation-report', icon: 'fa-shield', title: 'Operasyon Raporu' }
+                    { id: 'bos', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
+                    { id: 'bos', icon: 'fa-eye', title: 'Gözetim Logu' },
+                    { id: 'bos', icon: 'fa-shield', title: 'Operasyon Raporu' }
                 ]
             },
             {
                 title: 'Veri Tabanı',
                 items: [
-                    { id: 'case-search', icon: 'fa-folder', title: 'Dosya Sorgula' },
-                    { id: 'criminal-record', icon: 'fa-user-secret', title: 'Suç Kaydı' },
-                    { id: 'intel-database', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+                    { id: 'bos', icon: 'fa-folder', title: 'Dosya Sorgula' },
+                    { id: 'bos', icon: 'fa-user-secret', title: 'Suç Kaydı' },
+                    { id: 'bos', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
                 ]
             }
         ]
@@ -88,9 +88,9 @@ const departmentMenus = {
             {
                 title: 'İstihdam',
                 items: [
-                    { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
-                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
-                    { id: 'hearing-schedule', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
+                    { id: 'bos', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
+                    { id: 'bos', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
+                    { id: 'bos', icon: 'fa-calendar', title: 'Duruşma Takvimi' }
                 ]
             },
             {
@@ -110,9 +110,9 @@ const departmentMenus = {
             {
                 title: 'Ruhsatlandırma',
                 items: [
-                    { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-                    { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
-                    { id: 'lawyer-registry', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+                    { id: 'bos', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
+                    { id: 'bos', icon: 'fa-user', title: 'Sabıka Kaydı' },
+                    { id: 'bos', icon: 'fa-user-tie', title: 'Avukat Sicili' }
                 ]
             }
         ]
@@ -244,7 +244,7 @@ async function loadForm(formName, dept) {
         
     } catch (error) {
         console.error('Form yüklenirken hata:', error);
-        contentArea.innerHTML = '<p>Form yüklenirken bir hata oluştu.</p>';
+        contentArea.innerHTML = '<p>Yapım aşamasında.</p>';
     }
 }
 
