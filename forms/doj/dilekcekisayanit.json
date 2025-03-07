@@ -4,7 +4,7 @@
         "label": "Dosya Başlığı",
         "type": "text",
         "required": true,
-        "placeholder": "TEBLİGAT, ÖDEME TALEBİ, KAMU GÖREVİ, DAVA KARARI vb."
+        "placeholder": "DİLEKÇE YANITI, DİLEKÇE KARARI vb."
     },
     {
         "id": "tarih",
@@ -25,13 +25,13 @@
         "label": "Dava Avukatı Ad & Soyad",
         "type": "text",
         "required": true,
-        "placeholder": "Dava ile ilgilenen avukatın adı ve soyadı."
+        "placeholder": "Dilekçe ile ilgilenen avukatın adı ve soyadı."
     },
     {
         "id": "yanit",
         "label": "Dava Yanıtı",
         "type": "textarea",
         "required": true,
-        "placeholder": "Dava yanıtınızı yazınız."
+        "placeholder": "Dilekçe yanıtınızı yazınız."
     }
 ]
