@@ -86,7 +86,7 @@ const departmentMenus = {
     doj: {
         menus: [
             {
-                title: 'Formlar',
+                title: 'İstihdam',
                 items: [
                     { id: 'court-order', icon: 'fa-gavel', title: 'Mahkeme Kararı' },
                     { id: 'warrant-request', icon: 'fa-file-signature', title: 'Arama Emri Talebi' },
@@ -94,7 +94,21 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Veri Tabanı',
+                title: 'Davalar',
+                items: [
+                    { id: 'court-order', icon: 'fa-gavel', title: 'Dava Yanıtı' },
+                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Kısa Dava Yanıtı' },
+                ]
+            },
+            {
+                title: 'Dilekçeler',
+                items: [
+                    { id: 'court-order', icon: 'fa-gavel', title: 'Dilekçe Yanıtı' },
+                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Uzun Dilekçe Yanıtı' },
+                ]
+            },
+            {
+                title: 'Ruhsatlandırma',
                 items: [
                     { id: 'case-search', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
                     { id: 'criminal-record', icon: 'fa-user', title: 'Sabıka Kaydı' },
