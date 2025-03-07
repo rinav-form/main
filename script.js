@@ -192,9 +192,14 @@ async function loadForm(formName, dept) {
                 <form class="form-content">
                     ${generateFormHtml(formJson)}
                 </form>
-                <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
-                    <i class="fas fa-eye"></i> Önizleme Yap
-                </button>
+                <div class="form-buttons">
+                    <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
+                        <i class="fas fa-eye"></i> Önizleme Yap
+                    </button>
+                    <button class="reset-button" onclick="resetForm('${formName}', '${dept}')">
+                        <i class="fas fa-undo"></i> Temizle
+                    </button>
+                </div>
             </div>
             <div class="preview-container">
                 <div class="preview-content"></div>
@@ -299,6 +304,14 @@ async function generatePreview(formName, dept) {
     } catch (error) {
         console.error('Önizleme oluşturulurken hata:', error);
         document.querySelector('.preview-content').innerHTML = 'Önizleme oluşturulurken bir hata oluştu.';
+    }
+}
+
+function resetForm(formName, dept) {
+    const formElement = document.querySelector('.form-content');
+    if (formElement) {
+        formElement.reset();
+        localStorage.removeItem(`${dept}_${formName}_data`);
     }
 }
 
