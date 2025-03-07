@@ -1,0 +1,37 @@
+[  
+   {
+        "id": "baslik",
+        "label": "Dosya Başlığı",
+        "type": "text",
+        "required": true,
+        "placeholder": "TEBLİGAT, ÖDEME TALEBİ, KAMU GÖREVİ, DAVA KARARI vb."
+    },
+    {
+        "id": "tarih",
+        "label": "Gönderim Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "GG.AA.YYYY"
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    },
+    {
+        "id": "avukatadi",
+        "label": "Dava Avukatı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Dava ile ilgilenen avukatın adı ve soyadı."
+    },
+    {
+        "id": "yanit",
+        "label": "Dava Yanıtı",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Dava yanıtınızı yazınız."
+    }
+]
