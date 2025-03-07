@@ -127,7 +127,7 @@ function loadDepartmentHomepage(dept) {
                 <div class="header-left">
                     ${window.innerWidth <= 768 ? '<button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>' : ''}
                     <div class="dept-logo-header">
-                        <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
+                        <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo" class="dept-logo">
                     </div>
                     <div class="dept-info">
                         <h1>${dept.toUpperCase()}</h1>
@@ -166,6 +166,11 @@ function loadDepartmentHomepage(dept) {
             </div>
         </div>
     `;
+
+    // Logoya tıklama işleyicisi ekle
+    document.querySelector('.dept-logo').addEventListener('click', () => {
+        goBack();
+    });
 
     initializeMenuInteractions();
 }
