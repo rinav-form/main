@@ -48,14 +48,14 @@
     },
     {
         "id": "avukatadi",
-        "label": "Dava Avukatı Ad & Soyad",
+        "label": "Dilekçe Avukatı Ad & Soyad",
         "type": "text",
         "required": true,
         "placeholder": "Dilekçe ile ilgilenen avukatın adı ve soyadı."
     },
     {
         "id": "yanit",
-        "label": "Dava Yanıtı",
+        "label": "Dilekçe Yanıtı",
         "type": "textarea",
         "required": true,
         "placeholder": "Dilekçe yanıtınızı yazınız."
