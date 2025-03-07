@@ -96,15 +96,15 @@ const departmentMenus = {
             {
                 title: 'Davalar',
                 items: [
-                    { id: 'court-order', icon: 'fa-gavel', title: 'Dava Yanıtı' },
-                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Kısa Dava Yanıtı' },
+                    { id: 'davayanit', icon: 'fa-gavel', title: 'Dava Yanıtı' },
+                    { id: 'davakisayanit', icon: 'fa-file-signature', title: 'Kısa Dava Yanıtı' },
                 ]
             },
             {
                 title: 'Dilekçeler',
                 items: [
-                    { id: 'court-order', icon: 'fa-gavel', title: 'Dilekçe Yanıtı' },
-                    { id: 'warrant-request', icon: 'fa-file-signature', title: 'Uzun Dilekçe Yanıtı' },
+                    { id: 'dilekceyanit', icon: 'fa-gavel', title: 'Dilekçe Yanıtı' },
+                    { id: 'dilekcekisayanit', icon: 'fa-file-signature', title: 'Kısa Dilekçe Yanıtı' },
                 ]
             },
             {
