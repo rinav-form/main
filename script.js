@@ -245,57 +245,57 @@ async function loadForm(formName, dept) {
 function generateFormHtml(formJson) {
     return formJson.map(field => {
         switch (field.type) {
-            case 'text':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">${field.label}</label>
-                        <input type="text" id="${field.id}" name="${field.id}" required="${field.required}" />
-                    </div>
-                `;
-            case 'textarea':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">${field.label}</label>
-                        <textarea id="${field.id}" name="${field.id}" required="${field.required}"></textarea>
-                    </div>
-                `;
-            case 'select':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">${field.label}</label>
-                        <select id="${field.id}" name="${field.id}" required="${field.required}">
-                            ${field.options.map(option => `
-                                <option value="${option.value}">${option.label}</option>
-                            `).join('')}
-                        </select>
-                    </div>
-                `;
-            case 'date':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">${field.label}</label>
-                        <input type="date" id="${field.id}" name="${field.id}" required="${field.required}" />
-                    </div>
-                `;
-            case 'time':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">${field.label}</label>
-                        <input type="time" id="${field.id}" name="${field.id}" required="${field.required}" />
-                    </div>
-                `;
-            case 'checkbox':
-                return `
-                    <div class="form-group">
-                        <label for="${field.id}">
-                            <input type="checkbox" id="${field.id}" name="${field.id}" required="${field.required}" />
-                            ${field.label}
-                        </label>
-                    </div>
-                `;
-            default:
-                return '';
-        }
+    case 'text':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                <input type="text" id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}" />
+            </div>
+        `;
+    case 'textarea':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                <textarea id="${field.id}" name="${field.id}" required="${field.required}" placeholder="${field.placeholder || ''}"></textarea>
+            </div>
+        `;
+    case 'select':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                <select id="${field.id}" name="${field.id}" required="${field.required}">
+                    ${field.options.map(option => `
+                        <option value="${option.value}">${option.label}</option>
+                    `).join('')}
+                </select>
+            </div>
+        `;
+    case 'date':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                <input type="date" id="${field.id}" name="${field.id}" required="${field.required}" />
+            </div>
+        `;
+    case 'time':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">${field.label}</label>
+                <input type="time" id="${field.id}" name="${field.id}" required="${field.required}" />
+            </div>
+        `;
+    case 'checkbox':
+        return `
+            <div class="form-group">
+                <label for="${field.id}">
+                    <input type="checkbox" id="${field.id}" name="${field.id}" required="${field.required}" />
+                    ${field.label}
+                </label>
+            </div>
+        `;
+    default:
+        return '';
+}
     }).join('');
 }
 
