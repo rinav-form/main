@@ -364,8 +364,22 @@ body {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.copy-button {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.copy-button:hover {
+    background-color: darkgrey;
+}
+
 /* Temizleme butonu stili */
-.reset-button {
+.reset-button, .clear-preview-button {
     background-color: red;
     color: white;
     border: none;
@@ -374,7 +388,7 @@ body {
     border-radius: 5px;
 }
 
-.reset-button:hover {
+.reset-button:hover, .clear-preview-button:hover {
     background-color: darkred;
 }
 
