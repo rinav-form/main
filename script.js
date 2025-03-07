@@ -127,9 +127,7 @@ function loadDepartmentHomepage(dept) {
                 <div class="header-left">
                     ${window.innerWidth <= 768 ? '<button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>' : ''}
                     <div class="dept-logo-header">
-                        <a href="#" onclick="goBack()">
-                            <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo" class="dept-logo">
-                        </a>
+                        <img src="images/logos/${dept}-logo.svg" alt="${dept.toUpperCase()} Logo">
                     </div>
                     <div class="dept-info">
                         <h1>${dept.toUpperCase()}</h1>
