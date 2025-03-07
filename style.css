@@ -368,7 +368,7 @@ body {
     background-color: grey;
     color: white;
     border: none;
-    width: 50%;
+    width: 59.2%;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -383,7 +383,7 @@ body {
     background-color: red;
     color: white;
     border: none;
-    width: 50%;
+    width: 40%;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -457,7 +457,7 @@ body {
     color: white;
     border: none;
     padding: 10px 20px;
-    width: 50%;
+    width: 59.2%;
     cursor: pointer;
     font-weight: 500;
     transition: all 0.3s ease;
