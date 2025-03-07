@@ -117,8 +117,8 @@ body {
 }
 
 .dept-logo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin: 2rem 0;
     transition: all 1s ease;
 }
@@ -227,7 +227,12 @@ body {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
+    display: inline-block;
+}
+
+.dept-logo-header a {
+    display: inline-block;
 }
 
 .dept-logo-header img {
