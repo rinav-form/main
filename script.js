@@ -189,28 +189,24 @@ async function loadForm(formName, dept) {
         
         contentArea.innerHTML = `
             <div class="form-container">
+                <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
+                        <i class="fas fa-eye"></i> Önizleme Yap
+                </button>
+                 <button class="reset-button" onclick="resetForm('${formName}', '${dept}')">
+                        <i class="fas fa-undo"></i> Temizle
+                </button>
                 <form class="form-content">
                     ${generateFormHtml(formJson)}
                 </form>
-                <div class="form-buttons">
-                    <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
-                        <i class="fas fa-eye"></i> Önizleme Yap
-                    </button>
-                    <button class="reset-button" onclick="resetForm('${formName}', '${dept}')">
-                        <i class="fas fa-undo"></i> Temizle
-                    </button>
-                </div>
             </div>
             <div class="preview-container">
-                <div class="preview-content"></div>
-                <div class="preview-buttons">
-                    <button class="copy-button" onclick="copyPreview()">
+                 <button class="copy-button" onclick="copyPreview()">
                         <i class="fas fa-copy"></i> Kopyala
                     </button>
                     <button class="clear-preview-button" onclick="clearPreview()">
                         <i class="fas fa-trash"></i> Temizle
                     </button>
-                </div>
+                <div class="preview-content"></div>
             </div>
         `;
         
