@@ -4,7 +4,7 @@
         "label": "Dosya Başlığı",
         "type": "text",
         "required": true,
-        "placeholder": "DAVA KARARI, DAVA GÜNCELLEMESİ vb."
+        "placeholder": "DİLEKÇE KARARI, DİLEKÇE YANITI, DİLEKÇE GÜNCELLEMESİ vb."
     },
     {
         "id": "tarih",
