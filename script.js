@@ -180,11 +180,11 @@ async function loadForm(formName, dept) {
     
     try {
         // Form şablonunu yükle
-        const formResponse = await fetch(`forms/${dept}/${formName}.json`);
+        const formResponse = await fetch(`main/forms/${dept}/${formName}.json`);
         const formJson = await formResponse.json();
         
         // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.bbcode`);
+        const bbcodeResponse = await fetch(`main/bbcodes/${dept}/${formName}.bbcode`);
         const bbcodeTemplate = await bbcodeResponse.text();
         
         contentArea.innerHTML = `
@@ -251,7 +251,7 @@ function generateFormHtml(formJson) {
 async function generatePreview(formName, dept) {
     try {
         // BBCode şablonunu yükle
-        const bbcodeResponse = await fetch(`bbcodes/${dept}/${formName}.bbcode`);
+        const bbcodeResponse = await fetch(`main/bbcodes/${dept}/${formName}.bbcode`);
         let bbcodeTemplate = await bbcodeResponse.text();
         
         // Form verilerini al
