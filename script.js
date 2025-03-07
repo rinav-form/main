@@ -3,7 +3,7 @@ const departmentMenus = {
     lspd: {
         menus: [
             {
-                title: 'Formlar',
+                title: 'Davalar',
                 items: [
                     { id: 'incident-report', icon: 'fa-pen', title: 'Olay Raporu' },
                     { id: 'arrest-report', icon: 'fa-handcuffs', title: 'Tutuklama Raporu' },
@@ -13,7 +13,15 @@ const departmentMenus = {
                 ]
             },
             {
-                title: 'Veri Tabanı',
+                title: 'Dilekçeler',
+                items: [
+                    { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
+                    { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
+                    { id: 'warrant-search', icon: 'fa-gavel', title: 'Arama Emri Sorgula' }
+                ]
+            },
+            {
+                title: 'Ruhsatlandırma',
                 items: [
                     { id: 'criminal-search', icon: 'fa-user-check', title: 'Sabıka Sorgula' },
                     { id: 'vehicle-search', icon: 'fa-car', title: 'Araç Sorgula' },
