@@ -363,7 +363,8 @@ body {
     grid-area: main;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 20px;
     height: calc(100vh - 140px);
 }
 
