@@ -189,9 +189,9 @@ async function loadForm(formName, dept) {
         
         contentArea.innerHTML = `
             <div class="form-container">
-                <div class="form-content">
+                <form class="form-content">
                     ${generateFormHtml(formJson)}
-                </div>
+                </form>
                 <button class="preview-button" onclick="generatePreview('${formName}', '${dept}')">
                     <i class="fas fa-eye"></i> Önizleme Yap
                 </button>
@@ -201,12 +201,17 @@ async function loadForm(formName, dept) {
             </div>
         `;
         
-        // Form verilerini localStorage'a kaydet
-        document.querySelector('form').addEventListener('input', (e) => {
-            const formData = new FormData(e.target.form);
-            const formObject = Object.fromEntries(formData);
-            localStorage.setItem(`${dept}_${formName}_data`, JSON.stringify(formObject));
-        });
+        // Formun içeriği yüklendikten sonra event listener ekle
+        const formElement = document.querySelector('.form-content');
+        if (formElement) {
+            formElement.addEventListener('input', (e) => {
+                const formData = new FormData(e.target.form);
+                const formObject = Object.fromEntries(formData);
+                localStorage.setItem(`${dept}_${formName}_data`, JSON.stringify(formObject));
+            });
+        } else {
+            console.error('Form elemanı bulunamadı.');
+        }
         
     } catch (error) {
         console.error('Form yüklenirken hata:', error);
@@ -221,25 +226,48 @@ function generateFormHtml(formJson) {
                 return `
                     <div class="form-group">
                         <label for="${field.id}">${field.label}</label>
-                        <input type="text" id="${field.id}" name="${field.id}" />
+                        <input type="text" id="${field.id}" name="${field.id}" required="${field.required}" />
                     </div>
                 `;
             case 'textarea':
                 return `
                     <div class="form-group">
                         <label for="${field.id}">${field.label}</label>
-                        <textarea id="${field.id}" name="${field.id}"></textarea>
+                        <textarea id="${field.id}" name="${field.id}" required="${field.required}"></textarea>
                     </div>
                 `;
             case 'select':
                 return `
                     <div class="form-group">
                         <label for="${field.id}">${field.label}</label>
-                        <select id="${field.id}" name="${field.id}">
+                        <select id="${field.id}" name="${field.id}" required="${field.required}">
                             ${field.options.map(option => `
                                 <option value="${option.value}">${option.label}</option>
                             `).join('')}
                         </select>
+                    </div>
+                `;
+            case 'date':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="date" id="${field.id}" name="${field.id}" required="${field.required}" />
+                    </div>
+                `;
+            case 'time':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">${field.label}</label>
+                        <input type="time" id="${field.id}" name="${field.id}" required="${field.required}" />
+                    </div>
+                `;
+            case 'checkbox':
+                return `
+                    <div class="form-group">
+                        <label for="${field.id}">
+                            <input type="checkbox" id="${field.id}" name="${field.id}" required="${field.required}" />
+                            ${field.label}
+                        </label>
                     </div>
                 `;
             default:
