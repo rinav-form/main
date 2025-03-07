@@ -308,10 +308,12 @@ async function generatePreview(formName, dept) {
 }
 
 function resetForm(formName, dept) {
-    const formElement = document.querySelector('.form-content');
-    if (formElement) {
-        formElement.reset();
-        localStorage.removeItem(`${dept}_${formName}_data`);
+    if (confirm("Formu temizlemek istediğinize emin misiniz?")) {
+        const formElement = document.querySelector('.form-content');
+        if (formElement) {
+            formElement.reset();
+            localStorage.removeItem(`${dept}_${formName}_data`);
+        }
     }
 }
 
