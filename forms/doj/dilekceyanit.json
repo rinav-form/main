@@ -51,13 +51,13 @@
         "label": "Dava Avukatı Ad & Soyad",
         "type": "text",
         "required": true,
-        "placeholder": "Dava ile ilgilenen avukatın adı ve soyadı."
+        "placeholder": "Dilekçe ile ilgilenen avukatın adı ve soyadı."
     },
     {
         "id": "yanit",
         "label": "Dava Yanıtı",
         "type": "textarea",
         "required": true,
-        "placeholder": "Dava yanıtınızı yazınız."
+        "placeholder": "Dilekçe yanıtınızı yazınız."
     }
 ]
