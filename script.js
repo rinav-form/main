@@ -203,6 +203,14 @@ async function loadForm(formName, dept) {
             </div>
             <div class="preview-container">
                 <div class="preview-content"></div>
+                <div class="preview-buttons">
+                    <button class="copy-button" onclick="copyPreview()">
+                        <i class="fas fa-copy"></i> Kopyala
+                    </button>
+                    <button class="clear-preview-button" onclick="clearPreview()">
+                        <i class="fas fa-trash"></i> Temizle
+                    </button>
+                </div>
             </div>
         `;
         
@@ -315,6 +323,20 @@ function resetForm(formName, dept) {
             localStorage.removeItem(`${dept}_${formName}_data`);
         }
     }
+}
+
+function copyPreview() {
+    const previewContent = document.querySelector('.preview-content').textContent;
+    navigator.clipboard.writeText(previewContent).then(() => {
+        alert("Önizleme kopyalandı!");
+    }).catch((error) => {
+        console.error('Kopyalama hatası:', error);
+    });
+}
+
+function clearPreview() {
+    const previewContent = document.querySelector('.preview-content');
+    previewContent.textContent = '';
 }
 
 function initializeMenuInteractions() {
