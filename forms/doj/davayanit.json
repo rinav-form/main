@@ -9,7 +9,7 @@
         "id": "savciresim",
         "label": "Savcı Vesikalık",
         "type": "text",
-        "required": trueü,
+        "required": true,
         "placeholder": "118x154 boyutunda .png uzantılı resim linki."
     },
     {
