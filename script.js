@@ -111,7 +111,7 @@ const departmentMenus = {
                 title: 'Ruhsatlandırma',
                 items: [
                     { id: 'bos', icon: 'ruhsatodeme', title: 'Ödeme Aşaması' },
-                    { id: 'bos', icon: 'ruhsatnumara', title: 'Ruhsat Numara Aşaması' },
+                    { id: 'bos', icon: 'ruhsatnumara', title: 'Ruhsatlandırma Aşaması' },
                     { id: 'bos', icon: 'ruhsatonay', title: 'Onay Aşaması' }
                 ]
             }
