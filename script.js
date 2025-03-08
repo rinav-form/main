@@ -110,9 +110,9 @@ const departmentMenus = {
             {
                 title: 'Ruhsatlandırma',
                 items: [
-                    { id: 'bos', icon: 'fa-scale-balanced', title: 'Dava Sorgula' },
-                    { id: 'bos', icon: 'fa-user', title: 'Sabıka Kaydı' },
-                    { id: 'bos', icon: 'fa-user-tie', title: 'Avukat Sicili' }
+                    { id: 'bos', icon: 'ruhsatodeme', title: 'Ödeme Aşaması' },
+                    { id: 'bos', icon: 'ruhsatnumara', title: 'Ruhsat Numara Aşaması' },
+                    { id: 'bos', icon: 'ruhsatonay', title: 'Onay Aşaması' }
                 ]
             }
         ]
