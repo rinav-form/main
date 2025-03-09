@@ -1,1 +1,39 @@
-
+[  
+   {
+        "id": "tarih",
+        "label": "Güncelleme Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "Güncelleme tarihini giriniz."
+    },
+    {
+        "id": "basvuranad",
+        "label": "Başvuran Ad Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Başvuran kişiye ait ad soyadı yazınız."
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    },
+    {
+        "id": "silahmodel",
+        "label": "Silah Modeli",
+        "type": "select",
+        "options": [
+            { "value": "Musket - $124.125", "label": "Musket - İlk Başvuru" },
+            { "value": "Musket - $89.125", "label": "Musket - Yenileme" },
+            { "value": "Combat Pistol - $148.125", "label": "Combat Pistol - İlk Başvuru" },
+            { "value": "Combat Pistol - $98.125", "label": "Combat Pistol - Yenileme" },
+            { "value": "Glock.20 - $148.125", "label": "Glock.20 - İlk Başvuru" },
+            { "value": "Glock.20 - $98.125", "label": "Glock.20 - Yenileme" },
+            { "value": "Glock.19 - $148.125", "label": "Glock.19 - İlk Başvuru" },
+            { "value": "Glock.19 - $98.125", "label": "Glock.19 - Yenileme" }
+        ],
+        "required": true
+    }
+]
