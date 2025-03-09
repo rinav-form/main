@@ -1,1 +1,30 @@
-a
+[  
+    {
+        "id": "tarih",
+        "label": "Gönderim Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "GG.AA.YYYY"
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    },
+    {
+        "id": "basvuranad",
+        "label": "Dilekçe Avukatı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Ruhsat başvurusu yapanın adı ve soyadı."
+    },
+    {
+        "id": "sebep",
+        "label": "Reddetme Sebebi",
+        "type": "textarea",
+        "required": true,
+        "placeholder": "Reddedilme sebebini yazınız."
+    }
+]
