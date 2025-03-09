@@ -4,7 +4,7 @@
         "label": "Güncelleme Tarihi",
         "type": "text",
         "required": true,
-        "placeholder": "Güncelleme tarihini giriniz."
+        "placeholder": "GG.AA.YYYY"
     },
     {
         "id": "basvuranad",
