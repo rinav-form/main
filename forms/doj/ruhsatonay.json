@@ -11,9 +11,7 @@
            [size=2][b](([/b]Envanterinizdeki silaha tıklayıp [b]İncele[/b] butonuna basın ve ruhsat durumunu görüntüleyin.[b]))[/b][/size]
            [size=2][b](([/b][b]RUHSAT: [color=darkgreen]EVET[/color][/b] olarak görüntülediğiniz takdirde silahınızı kullanmaya başlayabilirsiniz..[b]))[/b][/size]
 
-[/size]
-
-[/div]", "label": "ONAY MESAJI" },
+[/size]", "label": "ONAY MESAJI" },
             { "value": "Musket - $89.125", "label": "RET MESAJI" }
         ],
         "required": true
