@@ -4,10 +4,7 @@
         "label": "ONAY / RET MESAJI",
         "type": "select",
         "options": [
-            { "value": "[div style="color: #504f4f; position: absolute; left: 60px; top: 560px; width:900px; margin: 0 auto; text-align: left;"]
-
-[size=11pt][b]Sayın BAŞVURAN AD & SOYAD,[/b] 
-Yapmış olduğunuz silah ruhsatı başvurusu değerlendirimiş ve tüm aşamaları eksiksiz tamamladığınız için başvurunuz [b][color=darkgreen]onaylanmıştır.[/color][/b]
+            { "value": "Yapmış olduğunuz silah ruhsatı başvurusu değerlendirimiş ve tüm aşamaları eksiksiz tamamladığınız için başvurunuz [b][color=darkgreen]onaylanmıştır.[/color][/b]
 
 
 [b]I.[/b] Ruhsatınız sisteme işlendikten sonra silahınızı kullanmaya başlayabilirsiniz.
