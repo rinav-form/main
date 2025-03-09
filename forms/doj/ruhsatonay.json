@@ -1,1 +1,45 @@
+[  
+   {
+        "id": "onay",
+        "label": "ONAY / RET MESAJI",
+        "type": "select",
+        "options": [
+            { "value": "[div style="color: #504f4f; position: absolute; left: 60px; top: 560px; width:900px; margin: 0 auto; text-align: left;"]
 
+[size=11pt][b]Sayın BAŞVURAN AD & SOYAD,[/b] 
+Yapmış olduğunuz silah ruhsatı başvurusu değerlendirimiş ve tüm aşamaları eksiksiz tamamladığınız için başvurunuz [b][color=darkgreen]onaylanmıştır.[/color][/b]
+
+
+[b]I.[/b] Ruhsatınız sisteme işlendikten sonra silahınızı kullanmaya başlayabilirsiniz.
+           [size=2][b](([/b]Envanterinizdeki silaha tıklayıp [b]İncele[/b] butonuna basın ve ruhsat durumunu görüntüleyin.[b]))[/b][/size]
+           [size=2][b](([/b][b]RUHSAT: [color=darkgreen]EVET[/color][/b] olarak görüntülediğiniz takdirde silahınızı kullanmaya başlayabilirsiniz..[b]))[/b][/size]
+
+[/size]
+
+[/div]", "label": "ONAY MESAJI" },
+            { "value": "Musket - $89.125", "label": "RET MESAJI" }
+        ],
+        "required": true
+    },
+   {
+        "id": "tarih",
+        "label": "Güncelleme Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "Güncelleme tarihini giriniz."
+    },
+    {
+        "id": "basvuranad",
+        "label": "Başvuran Ad Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Başvuran kişiye ait ad soyadı yazınız."
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    }
+]
