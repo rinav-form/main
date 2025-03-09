@@ -110,9 +110,9 @@ const departmentMenus = {
             {
                 title: 'Ruhsatlandırma',
                 items: [
-                    { id: 'bos', icon: 'ruhsatodeme', title: 'Ödeme Aşaması' },
-                    { id: 'bos', icon: 'ruhsatnumara', title: 'Ruhsat No Aşaması' },
-                    { id: 'bos', icon: 'ruhsatonay', title: 'Onay Aşaması' }
+                    { id: 'ruhsatodeme', icon: 'fa-money', title: 'Ödeme Aşaması' },
+                    { id: 'ruhsatnumara', icon: 'fa-money', title: 'Ruhsat No Aşaması' },
+                    { id: 'ruhsatonay', icon: 'fa-money', title: 'Onay Aşaması' }
                 ]
             }
         ]
