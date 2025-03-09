@@ -1,7 +1,7 @@
 [  
     {
         "id": "tarih",
-        "label": "Gönderim Tarihi",
+        "label": "Güncelleme Tarihi",
         "type": "text",
         "required": true,
         "placeholder": "GG.AA.YYYY"
