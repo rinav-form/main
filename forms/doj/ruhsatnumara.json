@@ -1,1 +1,23 @@
-
+[  
+   {
+        "id": "tarih",
+        "label": "Güncelleme Tarihi",
+        "type": "text",
+        "required": true,
+        "placeholder": "Güncelleme tarihini giriniz."
+    },
+    {
+        "id": "basvuranad",
+        "label": "Başvuran Ad Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Başvuran kişiye ait ad soyadı yazınız."
+    },
+    {
+        "id": "savciad",
+        "label": "Savcı Ad & Soyad",
+        "type": "text",
+        "required": true,
+        "placeholder": "Adınızı ve soyadınızı yazınız."
+    }
+]
