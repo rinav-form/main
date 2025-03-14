@@ -122,6 +122,8 @@ const departmentMenus = {
                     { id: 'dojlspd', icon: 'fa-money', title: 'DOJ / LSPD' },
                     { id: 'dojlssd', icon: 'fa-folder-grid', title: 'DOJ / LSSD' },
                     { id: 'dojlsfd', icon: 'fa-octagon-xmark', title: 'DOJ / LSFD' }
+                ]
+            }
         ]
     }
 };
