@@ -95,33 +95,33 @@ const departmentMenus = {
             {
                 title: 'Davalar',
                 items: [
-                    { id: 'davayanit', icon: 'fa-gavel', title: 'Dava Yanıtı' },
+                    { id: 'davayanit', icon: 'fa-reply', title: 'Dava Yanıtı' },
                     { id: 'davakisayanit', icon: 'fa-file-signature', title: 'Kısa Dava Yanıtı' },
                 ]
             },
             {
                 title: 'Dilekçeler',
                 items: [
-                    { id: 'dilekceyanit', icon: 'fa-gavel', title: 'Dilekçe Yanıtı' },
+                    { id: 'dilekceyanit', icon: 'fa-reply', title: 'Dilekçe Yanıtı' },
                     { id: 'dilekcekisayanit', icon: 'fa-file-signature', title: 'Kısa Dilekçe Yanıtı' },
                 ]
             },
             {
                 title: 'Ruhsatlandırma',
                 items: [
-                    { id: 'ruhsatodeme', icon: 'fa-money', title: 'Ödeme Aşaması' },
-                    { id: 'ruhsatnumara', icon: 'fa-folder-grid', title: 'Ruhsat No Aşaması' },
-                    { id: 'ruhsatonay', icon: 'fa-octagon-check', title: 'Onay Mesajı' },
-                    { id: 'ruhsatret', icon: 'fa-octagon-xmark', title: 'Ret Mesajı' }
+                    { id: 'ruhsatodeme', icon: 'fa-dollar-sign', title: 'Ödeme Aşaması' },
+                    { id: 'ruhsatnumara', icon: 'fa-file-alt', title: 'Ruhsat No Aşaması' },
+                    { id: 'ruhsatonay', icon: 'fa-check-circle', title: 'Onay Mesajı' },
+                    { id: 'ruhsatret', icon: 'fa-times-circle', title: 'Ret Mesajı' }
                 ]
             },
             {
                 title: 'Resmi Arz Talep',
                 items: [
-                    { id: 'dojfib', icon: 'fa-octagon-check', title: 'DOJ / FIB' },
-                    { id: 'dojlspd', icon: 'fa-money', title: 'DOJ / LSPD' },
-                    { id: 'dojlssd', icon: 'fa-folder-grid', title: 'DOJ / LSSD' },
-                    { id: 'dojlsfd', icon: 'fa-octagon-xmark', title: 'DOJ / LSFD' }
+                    { id: 'dojfib', icon: 'fa-shield-alt', title: 'DOJ / FIB' },
+                    { id: 'dojlspd', icon: 'fa-badge', title: 'DOJ / LSPD' },
+                    { id: 'dojlssd', icon: 'fa-star', title: 'DOJ / LSSD' },
+                    { id: 'dojlsfd', icon: 'fa-fire-extinguisher', title: 'DOJ / LSFD' }
                 ]
             }
         ]
