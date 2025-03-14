@@ -118,8 +118,8 @@ const departmentMenus = {
             {
                 title: 'Resmi Arz Talep',
                 items: [
-                    { id: 'dojfib', icon: 'fa-shield-alt', title: 'DOJ / FIB' },
-                    { id: 'dojlspd', icon: 'fa-user-shield', title: 'DOJ / LSPD' },
+                    { id: 'dojfib', icon: 'fa-user-secret', title: 'DOJ / FIB' },
+                    { id: 'dojlspd', icon: 'fa-shield-alt', title: 'DOJ / LSPD' },
                     { id: 'dojlssd', icon: 'fa-star', title: 'DOJ / LSSD' },
                     { id: 'dojlsfd', icon: 'fa-fire-extinguisher', title: 'DOJ / LSFD' }
                 ]
