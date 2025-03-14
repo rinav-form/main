@@ -66,19 +66,18 @@ const departmentMenus = {
     fib: {
         menus: [
             {
-                title: 'Formlar',
+                title: 'Soruşturmalar',
                 items: [
-                    { id: 'bos', icon: 'fa-magnifying-glass', title: 'Soruşturma Raporu' },
-                    { id: 'bos', icon: 'fa-eye', title: 'Gözetim Logu' },
-                    { id: 'bos', icon: 'fa-shield', title: 'Operasyon Raporu' }
+                    { id: 'kisiselsorusturma', icon: 'fa-magnifying-glass', title: 'Kişisel Soruşturma' },
+                    { id: 'olaysorusturma', icon: 'fa-eye', title: 'Olay Soruşturması' },
+                    { id: 'orgutsorusturma', icon: 'fa-shield', title: 'Örgüt Soruşturması' }
                 ]
             },
             {
-                title: 'Veri Tabanı',
+                title: 'Raporlar',
                 items: [
-                    { id: 'bos', icon: 'fa-folder', title: 'Dosya Sorgula' },
-                    { id: 'bos', icon: 'fa-user-secret', title: 'Suç Kaydı' },
-                    { id: 'bos', icon: 'fa-database', title: 'İstihbarat Veritabanı' }
+                    { id: 'fibsaharapor', icon: 'fa-folder', title: 'Saha Raporu' },
+                    { id: 'fibsorgurapor', icon: 'fa-user-secret', title: 'Sorgu Raporu' }
                 ]
             }
         ]
@@ -115,7 +114,14 @@ const departmentMenus = {
                     { id: 'ruhsatonay', icon: 'fa-octagon-check', title: 'Onay Mesajı' },
                     { id: 'ruhsatret', icon: 'fa-octagon-xmark', title: 'Ret Mesajı' }
                 ]
-            }
+            },
+            {
+                title: 'Resmi Arz Talep',
+                items: [
+                    { id: 'dojfib', icon: 'fa-octagon-check', title: 'DOJ / FIB' },
+                    { id: 'dojlspd', icon: 'fa-money', title: 'DOJ / LSPD' },
+                    { id: 'dojlssd', icon: 'fa-folder-grid', title: 'DOJ / LSSD' },
+                    { id: 'dojlsfd', icon: 'fa-octagon-xmark', title: 'DOJ / LSFD' }
         ]
     }
 };
